@@ -3,11 +3,11 @@
   <title>zyx的博客</title>
   
   <subtitle>「深藏不露是一种卓越的才能」</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://zyx02.github.io/"/>
+  <link href="http://zyx02.github.io/blog/"/>
   <updated>2019-10-10T14:56:56.735Z</updated>
-  <id>http://zyx02.github.io/</id>
+  <id>http://zyx02.github.io/blog/</id>
   
   <author>
     <name>不省一不改名</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>电脑如何进入pixiv</title>
-    <link href="http://zyx02.github.io/2019/10/10/%E7%94%B5%E8%84%91%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5pixiv/"/>
-    <id>http://zyx02.github.io/2019/10/10/电脑如何进入pixiv/</id>
+    <link href="http://zyx02.github.io/blog/2019/10/10/%E7%94%B5%E8%84%91%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5pixiv/"/>
+    <id>http://zyx02.github.io/blog/2019/10/10/电脑如何进入pixiv/</id>
     <published>2019-10-10T14:56:14.000Z</published>
     <updated>2019-10-10T14:56:56.735Z</updated>
     
@@ -36,14 +36,14 @@
     </summary>
     
     
-      <category term="工具" scheme="http://zyx02.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://zyx02.github.io/blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>题解 P1578【奶牛浴场】</title>
-    <link href="http://zyx02.github.io/2019/10/08/%E9%A2%98%E8%A7%A3-P1578%E3%80%90%E5%A5%B6%E7%89%9B%E6%B5%B4%E5%9C%BA%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/10/08/题解-P1578【奶牛浴场】/</id>
+    <link href="http://zyx02.github.io/blog/2019/10/08/%E9%A2%98%E8%A7%A3-P1578%E3%80%90%E5%A5%B6%E7%89%9B%E6%B5%B4%E5%9C%BA%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/10/08/题解-P1578【奶牛浴场】/</id>
     <published>2019-10-08T15:12:20.000Z</published>
     <updated>2019-10-08T15:13:55.100Z</updated>
     
@@ -59,22 +59,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="动态规划（dp）" scheme="http://zyx02.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
+      <category term="动态规划（dp）" scheme="http://zyx02.github.io/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
     
-      <category term="最大子矩形" scheme="http://zyx02.github.io/tags/%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E5%BD%A2/"/>
+      <category term="最大子矩形" scheme="http://zyx02.github.io/blog/tags/%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E5%BD%A2/"/>
     
   </entry>
   
   <entry>
     <title>倍增LCA学习笔记</title>
-    <link href="http://zyx02.github.io/2019/10/06/%E5%80%8D%E5%A2%9ELCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://zyx02.github.io/2019/10/06/倍增LCA学习笔记/</id>
+    <link href="http://zyx02.github.io/blog/2019/10/06/%E5%80%8D%E5%A2%9ELCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://zyx02.github.io/blog/2019/10/06/倍增LCA学习笔记/</id>
     <published>2019-10-05T17:22:52.000Z</published>
     <updated>2019-10-05T17:24:12.371Z</updated>
     
@@ -91,20 +91,20 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="学习笔记" scheme="http://zyx02.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://zyx02.github.io/blog/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="倍增" scheme="http://zyx02.github.io/tags/%E5%80%8D%E5%A2%9E/"/>
+      <category term="倍增" scheme="http://zyx02.github.io/blog/tags/%E5%80%8D%E5%A2%9E/"/>
     
-      <category term="LCA,最近公共祖先" scheme="http://zyx02.github.io/tags/LCA-%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+      <category term="LCA,最近公共祖先" scheme="http://zyx02.github.io/blog/tags/LCA-%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
   </entry>
   
   <entry>
     <title>康托展开学习笔记</title>
-    <link href="http://zyx02.github.io/2019/09/29/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://zyx02.github.io/2019/09/29/康托展开学习笔记/</id>
+    <link href="http://zyx02.github.io/blog/2019/09/29/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://zyx02.github.io/blog/2019/09/29/康托展开学习笔记/</id>
     <published>2019-09-29T15:41:01.000Z</published>
     <updated>2019-10-05T17:23:54.393Z</updated>
     
@@ -121,20 +121,20 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="学习笔记" scheme="http://zyx02.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://zyx02.github.io/blog/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="康托展开" scheme="http://zyx02.github.io/tags/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/"/>
+      <category term="康托展开" scheme="http://zyx02.github.io/blog/tags/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/"/>
     
-      <category term="组合数" scheme="http://zyx02.github.io/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
+      <category term="组合数" scheme="http://zyx02.github.io/blog/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>广州中山纪念中学游记</title>
-    <link href="http://zyx02.github.io/2019/07/14/%E5%B9%BF%E5%B7%9E%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6%E6%B8%B8%E8%AE%B0/"/>
-    <id>http://zyx02.github.io/2019/07/14/广州中山纪念中学游记/</id>
+    <link href="http://zyx02.github.io/blog/2019/07/14/%E5%B9%BF%E5%B7%9E%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://zyx02.github.io/blog/2019/07/14/广州中山纪念中学游记/</id>
     <published>2019-07-14T15:51:44.000Z</published>
     <updated>2019-07-15T10:31:46.418Z</updated>
     
@@ -151,14 +151,14 @@
     </summary>
     
     
-      <category term="游记" scheme="http://zyx02.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
+      <category term="游记" scheme="http://zyx02.github.io/blog/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF581B 【Luxurious Houses】</title>
-    <link href="http://zyx02.github.io/2019/06/24/%E9%A2%98%E8%A7%A3-CF581B-%E3%80%90Luxurious-Houses%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/06/24/题解-CF581B-【Luxurious-Houses】/</id>
+    <link href="http://zyx02.github.io/blog/2019/06/24/%E9%A2%98%E8%A7%A3-CF581B-%E3%80%90Luxurious-Houses%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/06/24/题解-CF581B-【Luxurious-Houses】/</id>
     <published>2019-06-24T01:56:55.000Z</published>
     <updated>2019-06-25T14:25:15.070Z</updated>
     
@@ -179,22 +179,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="动态规划（dp）" scheme="http://zyx02.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
+      <category term="动态规划（dp）" scheme="http://zyx02.github.io/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1152A 【Neko Finds Grapes】</title>
-    <link href="http://zyx02.github.io/2019/05/19/%E9%A2%98%E8%A7%A3-CF1152A-%E3%80%90Neko-Finds-Grapes%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/05/19/题解-CF1152A-【Neko-Finds-Grapes】/</id>
+    <link href="http://zyx02.github.io/blog/2019/05/19/%E9%A2%98%E8%A7%A3-CF1152A-%E3%80%90Neko-Finds-Grapes%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/05/19/题解-CF1152A-【Neko-Finds-Grapes】/</id>
     <published>2019-05-19T09:03:30.000Z</published>
     <updated>2019-06-25T14:26:08.799Z</updated>
     
@@ -215,22 +215,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="数论,数学" scheme="http://zyx02.github.io/tags/%E6%95%B0%E8%AE%BA-%E6%95%B0%E5%AD%A6/"/>
+      <category term="数论,数学" scheme="http://zyx02.github.io/blog/tags/%E6%95%B0%E8%AE%BA-%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF17A 【Noldbach problem】</title>
-    <link href="http://zyx02.github.io/2019/04/18/%E9%A2%98%E8%A7%A3-CF17A-%E3%80%90Noldbach-problem%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/18/题解-CF17A-【Noldbach-problem】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/18/%E9%A2%98%E8%A7%A3-CF17A-%E3%80%90Noldbach-problem%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/18/题解-CF17A-【Noldbach-problem】/</id>
     <published>2019-04-18T15:26:25.000Z</published>
     <updated>2019-06-25T14:24:39.358Z</updated>
     
@@ -254,24 +254,24 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="数论,数学" scheme="http://zyx02.github.io/tags/%E6%95%B0%E8%AE%BA-%E6%95%B0%E5%AD%A6/"/>
+      <category term="数论,数学" scheme="http://zyx02.github.io/blog/tags/%E6%95%B0%E8%AE%BA-%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="素数" scheme="http://zyx02.github.io/tags/%E7%B4%A0%E6%95%B0/"/>
+      <category term="素数" scheme="http://zyx02.github.io/blog/tags/%E7%B4%A0%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1133A 【Middle of the Contest】</title>
-    <link href="http://zyx02.github.io/2019/04/16/%E9%A2%98%E8%A7%A3-CF1133A-%E3%80%90Middle-of-the-Contest%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/16/题解-CF1133A-【Middle-of-the-Contest】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/16/%E9%A2%98%E8%A7%A3-CF1133A-%E3%80%90Middle-of-the-Contest%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/16/题解-CF1133A-【Middle-of-the-Contest】/</id>
     <published>2019-04-15T16:02:48.000Z</published>
     <updated>2019-06-25T14:26:11.795Z</updated>
     
@@ -296,24 +296,24 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="字符串" scheme="http://zyx02.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="模拟" scheme="http://zyx02.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://zyx02.github.io/blog/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
   </entry>
   
   <entry>
     <title>一些好用的网站</title>
-    <link href="http://zyx02.github.io/2019/04/14/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/"/>
-    <id>http://zyx02.github.io/2019/04/14/一些好用的网站/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/14/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/"/>
+    <id>http://zyx02.github.io/blog/2019/04/14/一些好用的网站/</id>
     <published>2019-04-14T08:54:10.000Z</published>
     <updated>2019-09-29T14:26:37.915Z</updated>
     
@@ -331,14 +331,14 @@
     </summary>
     
     
-      <category term="工具" scheme="http://zyx02.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://zyx02.github.io/blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1118A 【Water Buying】</title>
-    <link href="http://zyx02.github.io/2019/04/11/%E9%A2%98%E8%A7%A3-CF1118A-%E3%80%90Water-Buying%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/11/题解-CF1118A-【Water-Buying】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/11/%E9%A2%98%E8%A7%A3-CF1118A-%E3%80%90Water-Buying%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/11/题解-CF1118A-【Water-Buying】/</id>
     <published>2019-04-11T13:43:57.000Z</published>
     <updated>2019-06-25T14:25:31.636Z</updated>
     
@@ -358,22 +358,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="贪心" scheme="http://zyx02.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="贪心" scheme="http://zyx02.github.io/blog/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1092B 【Teams Forming】</title>
-    <link href="http://zyx02.github.io/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/10/题解-CF1092B-【Teams-Forming】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/10/题解-CF1092B-【Teams-Forming】/</id>
     <published>2019-04-10T14:08:21.000Z</published>
     <updated>2019-06-25T14:25:25.543Z</updated>
     
@@ -393,22 +393,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="贪心" scheme="http://zyx02.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="贪心" scheme="http://zyx02.github.io/blog/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1145F 【Neat Words】</title>
-    <link href="http://zyx02.github.io/2019/04/08/%E9%A2%98%E8%A7%A3-CF1145F-%E3%80%90Neat-Words%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/08/题解-CF1145F-【Neat-Words】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/08/%E9%A2%98%E8%A7%A3-CF1145F-%E3%80%90Neat-Words%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/08/题解-CF1145F-【Neat-Words】/</id>
     <published>2019-04-08T13:30:27.000Z</published>
     <updated>2019-06-25T14:26:10.485Z</updated>
     
@@ -430,24 +430,24 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="字符串" scheme="http://zyx02.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="模拟" scheme="http://zyx02.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://zyx02.github.io/blog/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
   </entry>
   
   <entry>
     <title>题解 P1794 【装备运输_NOI导刊2010提高（04）】</title>
-    <link href="http://zyx02.github.io/2019/04/06/%E9%A2%98%E8%A7%A3-P1794-%E3%80%90%E8%A3%85%E5%A4%87%E8%BF%90%E8%BE%93-NOI%E5%AF%BC%E5%88%8A2010%E6%8F%90%E9%AB%98%EF%BC%8804%EF%BC%89%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/06/题解-P1794-【装备运输-NOI导刊2010提高（04）】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/06/%E9%A2%98%E8%A7%A3-P1794-%E3%80%90%E8%A3%85%E5%A4%87%E8%BF%90%E8%BE%93-NOI%E5%AF%BC%E5%88%8A2010%E6%8F%90%E9%AB%98%EF%BC%8804%EF%BC%89%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/06/题解-P1794-【装备运输-NOI导刊2010提高（04）】/</id>
     <published>2019-04-06T06:15:59.000Z</published>
     <updated>2019-06-25T14:26:01.197Z</updated>
     
@@ -467,22 +467,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="动态规划（dp）" scheme="http://zyx02.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
+      <category term="动态规划（dp）" scheme="http://zyx02.github.io/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
     
-      <category term="背包" scheme="http://zyx02.github.io/tags/%E8%83%8C%E5%8C%85/"/>
+      <category term="背包" scheme="http://zyx02.github.io/blog/tags/%E8%83%8C%E5%8C%85/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1043A 【Elections】</title>
-    <link href="http://zyx02.github.io/2019/04/01/%E9%A2%98%E8%A7%A3-CF1043A-%E3%80%90Elections%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/04/01/题解-CF1043A-【Elections】/</id>
+    <link href="http://zyx02.github.io/blog/2019/04/01/%E9%A2%98%E8%A7%A3-CF1043A-%E3%80%90Elections%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/04/01/题解-CF1043A-【Elections】/</id>
     <published>2019-04-01T15:41:41.000Z</published>
     <updated>2019-06-25T14:25:20.001Z</updated>
     
@@ -500,22 +500,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="枚举" scheme="http://zyx02.github.io/tags/%E6%9E%9A%E4%B8%BE/"/>
+      <category term="枚举" scheme="http://zyx02.github.io/blog/tags/%E6%9E%9A%E4%B8%BE/"/>
     
   </entry>
   
   <entry>
     <title>set学习笔记</title>
-    <link href="http://zyx02.github.io/2019/03/31/set%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://zyx02.github.io/2019/03/31/set学习笔记/</id>
+    <link href="http://zyx02.github.io/blog/2019/03/31/set%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://zyx02.github.io/blog/2019/03/31/set学习笔记/</id>
     <published>2019-03-30T17:25:40.000Z</published>
     <updated>2019-06-25T14:24:07.888Z</updated>
     
@@ -531,18 +531,18 @@
     </summary>
     
     
-      <category term="set" scheme="http://zyx02.github.io/tags/set/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="set" scheme="http://zyx02.github.io/blog/tags/set/"/>
     
-      <category term="学习笔记" scheme="http://zyx02.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://zyx02.github.io/blog/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF1130A 【Be Positive】</title>
-    <link href="http://zyx02.github.io/2019/03/30/%E9%A2%98%E8%A7%A3-CF1130A-%E3%80%90Be-Positive%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/03/30/题解-CF1130A-【Be-Positive】/</id>
+    <link href="http://zyx02.github.io/blog/2019/03/30/%E9%A2%98%E8%A7%A3-CF1130A-%E3%80%90Be-Positive%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/03/30/题解-CF1130A-【Be-Positive】/</id>
     <published>2019-03-29T16:47:02.000Z</published>
     <updated>2019-06-25T14:26:13.558Z</updated>
     
@@ -562,20 +562,20 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="枚举" scheme="http://zyx02.github.io/tags/%E6%9E%9A%E4%B8%BE/"/>
+      <category term="枚举" scheme="http://zyx02.github.io/blog/tags/%E6%9E%9A%E4%B8%BE/"/>
     
   </entry>
   
   <entry>
     <title>A+B problem(高精)python</title>
-    <link href="http://zyx02.github.io/2019/03/27/A-B-problem-%E9%AB%98%E7%B2%BE-python/"/>
-    <id>http://zyx02.github.io/2019/03/27/A-B-problem-高精-python/</id>
+    <link href="http://zyx02.github.io/blog/2019/03/27/A-B-problem-%E9%AB%98%E7%B2%BE-python/"/>
+    <id>http://zyx02.github.io/blog/2019/03/27/A-B-problem-高精-python/</id>
     <published>2019-03-27T15:17:25.000Z</published>
     <updated>2019-06-25T14:23:51.898Z</updated>
     
@@ -591,14 +591,14 @@
     </summary>
     
     
-      <category term="python" scheme="http://zyx02.github.io/tags/python/"/>
+      <category term="python" scheme="http://zyx02.github.io/blog/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>题解 CF102A 【Clothes】</title>
-    <link href="http://zyx02.github.io/2019/03/27/%E9%A2%98%E8%A7%A3-CF102A-%E3%80%90Clothes%E3%80%91/"/>
-    <id>http://zyx02.github.io/2019/03/27/题解-CF102A-【Clothes】/</id>
+    <link href="http://zyx02.github.io/blog/2019/03/27/%E9%A2%98%E8%A7%A3-CF102A-%E3%80%90Clothes%E3%80%91/"/>
+    <id>http://zyx02.github.io/blog/2019/03/27/题解-CF102A-【Clothes】/</id>
     <published>2019-03-27T12:51:31.000Z</published>
     <updated>2019-06-25T14:25:04.508Z</updated>
     
@@ -618,22 +618,22 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="CodeForces" scheme="http://zyx02.github.io/tags/CodeForces/"/>
+      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
-      <category term="深度优先搜索（dfs）" scheme="http://zyx02.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88dfs%EF%BC%89/"/>
+      <category term="深度优先搜索（dfs）" scheme="http://zyx02.github.io/blog/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88dfs%EF%BC%89/"/>
     
   </entry>
   
   <entry>
     <title>string学习笔记</title>
-    <link href="http://zyx02.github.io/2019/03/24/string%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://zyx02.github.io/2019/03/24/string学习笔记/</id>
+    <link href="http://zyx02.github.io/blog/2019/03/24/string%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://zyx02.github.io/blog/2019/03/24/string学习笔记/</id>
     <published>2019-03-23T16:02:40.000Z</published>
     <updated>2019-06-25T14:24:15.465Z</updated>
     
@@ -649,11 +649,11 @@
     </summary>
     
     
-      <category term="C++" scheme="http://zyx02.github.io/tags/C/"/>
+      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="学习笔记" scheme="http://zyx02.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://zyx02.github.io/blog/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="字符串" scheme="http://zyx02.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
