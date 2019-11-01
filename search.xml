@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[浅谈OI中的骗分技巧——by WKAHPM]]></title>
     <url>%2Fblog%2F2019%2F10%2F21%2F%E6%B5%85%E8%B0%88OI%E4%B8%AD%E7%9A%84%E9%AA%97%E5%88%86%E2%80%94%E6%8A%80%E5%B7%A7%E2%80%94%E2%80%94by-WKAHPM%2F</url>
-    <content type="text"><![CDATA[0.写在前面在NOIP$CSP$的考场上，很多题目我们在考场上往往无法想到正解（当然大佬除外）。这时候我们就需要一些骗分技巧来为自己争取一些部分分。 1.骗分的意义首先我们要了解什么是子任务。 对于一道题，它可能存在多个子任务。这些子任务的数据往往具有某些特点或者在某个小范围内，骗分的意义就是在打不出正解的情况下拿到这些子任务的分数。 例如$2018NOIP$ $T2$中的龙虎斗，它的子任务分布是这样的 【数据规模与约定】 $1 &lt; m &lt; n,1 ≤ p1 ≤ n.$ 对于$20$%的数据,$n = 3, m = 2, ci = 1, s1,s2 ≤ 100$. 另有$20$%的数据,$n ≤ 10, p1 = m, ci = 1, s1,s2 ≤ 100$. 对于$20$%的数据,$n = 3, m = 2, ci = 1,s1,s2 ≤ 100$. 对于$60$%的数据,$n ≤ 100, ci = 1,s1,s2 ≤ 100$. 对于$80$%的数据,$n ≤ 100, ci,s1,s2 ≤ 100$. 对于$100$%的数据,$n ≤ 10^5, ci = 1, s1,s2 ≤ 10^9$. 观察可以发现,$80$%的数据都很小，这时候我们就可以用暴力来拿到这$80$分。 2.基础的骗分1.输样例一道题目都会给你输入输出样例，如果你想不出其他解决该问题的方法，可以尝试直接输出样例，这就是考验你$rp$的时候了 例题：$2018NOIP$ $T4$对称二叉树 输出第二个样例即$3$可以拿到32分 没错就是这段代码可以为你拿到32分 1234567891011#include &lt;bits/stdc++.h&gt;using namespace std;int main() &#123; //freopen("tree.in", "r", stdin); //freopen("tree.out", "w" ,stdout); cout &lt;&lt; 3; return 0;&#125; 当一道题目包含无解的情况时，也可以通过输出无解来获得部分分 2.输出随机数这个也是考验$rp$的，根据数据范围输出随机数。 随机数生成代码 123456789#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; srand(time(0)); //随机种子 printf("%d" , rand()%b + a) //输出一个范围在a~a+b-1的随机数 return 0;&#125; 需要注意的是随机数的生成范围在不同操作系统下是不一样的，在Windows下是$0$~$32767$ 由于篇幅限制，基础的骗分技巧不再赘述。 3.高级骗分技巧1.打表很多人可能认为打表是最基础的骗分技巧，但是打表也是有艺术的。 打表的用处很多，例如 1 减小时间复杂度 2 找规律 3 ······ 先说说如何减小时间复杂度。 当一些题目数据范围很小时，我们可以考虑通过打表使程序运行效率提高，例如$2008NOIP$ $T3$传球游戏 这是我$90$分的程序 1234567891011121314151617181920212223242526#include&lt;bits/stdc++.h&gt;using namespace std;int f[31][31],n,m;int dfs(int x,int y)&#123; if(f[x][y]) return f[x][y]; if(y==0) &#123; if(x==1)return f[x][y]=1; else return f[x][y]=0; &#125; if(x==n) &#123; return f[x][y]=dfs(x-1,y-1)+dfs(1,y-1); &#125; else if(x==1) return f[x][y]=dfs(n,y-1)+dfs(x+1,y-1); else return f[x][y]=dfs(x-1,y-1)+dfs(x+1,y-1);&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;m); printf("%d",dfs(1,m)); return 0;&#125; 但是这个程序会被$10$ $29$这个数据给卡超时 这个时候加入打表就可以完美$AC$这道题 12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int f[31][31],n,m;int dfs(int x,int y)&#123; if(f[x][y]) return f[x][y]; if(y==0) &#123; if(x==1)return f[x][y]=1; else return f[x][y]=0; &#125; if(x==n) &#123; return f[x][y]=dfs(x-1,y-1)+dfs(1,y-1); &#125; else if(x==1) return f[x][y]=dfs(n,y-1)+dfs(x+1,y-1); else return f[x][y]=dfs(x-1,y-1)+dfs(x+1,y-1);&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;m); if(n==10&amp;&amp;m==29) &#123; cout&lt;&lt;0; return 0; &#125; printf("%d",dfs(1,m)); return 0;&#125; 这段程序比上一段程序多出来的部分就是 12345if(n==10&amp;&amp;m==29) &#123; cout&lt;&lt;0; return 0; &#125; 对于一些对素数判断存在要求的题目，我们可以预处理出素数表，减少判断的时间。 大致是这样的 123456789101112131415161718192021222324252627282930#include&lt;bits/stdc++.h&gt;using namespace std; bool prime(long long num) //快速判断素数&#123; if (num == 2 || num == 3) &#123; return true; &#125; if (num % 6 != 1 &amp;&amp; num % 6 != 5) &#123; return false; &#125; for (int i = 5; i*i &lt;= num; i += 6) &#123; if (num % i == 0 || num % (i+2) == 0) &#123; return false; &#125; &#125; return true;&#125; int main()&#123; freopen("prime.out","w",stdout);//将表输出到文件里，方便复制 for(int i = 2; i &lt;= n; i ++) if(prime(i)) cout &lt;&lt; "i,"//加入逗号方便复制 return 0;&#125; 这时候将prime.out里的数字复制到表里就可以了 1Prime[LEN]=&#123;2,3,5,···&#125; 再来说说找规律。 对于一些题目，我们可以输出一些小数据的答案，观察答案与输入数据的关系，这种方法一般适用于数论题。 如$1999NOIP$ $T1$? Cantor表 可以通过行列和答案的关系找出某种规律。 打表的方式千变万化，所以有着”打表出省一”之说（笑），当然也不能过分依赖打表，造成思维惰性。 2.dfs如果你熟练掌握了$dfs$（深度优先搜索），你会发现“万物皆可搜”。 当一个题目打不出来怎么办？先打个$dfs$，可能这不是最优解，但是$dfs$思路清晰，码量小，可以拿到部分分。而且有时它也可以便于你想出正解。动态规划的思想有部分就来自于搜索。 例如$2018NOIP$ $T4$对称二叉树 如果你熟练掌握了二叉树的知识，你会很容易写出一个$dfs$，而$dfs$就是这道题目的正解。。。 所以万物皆可搜 万物皆可搜 万物皆可搜 3.灵活运用子任务的数据范围或数据特点这部分就真的非常需要技巧了。 数据范围往往不是无意义的，它存在的意义就是卡掉某些错解。 先上张图 数据范围对选择算法非常重要，算法的选择将会决定你是否能做出这道题。 根据子任务的数据范围，我们可以通过它来选择不同子任务用的算法。 如开头提到的龙虎斗，对于$80$分的数据$n&lt;=100$,用$O(n^2)$的算法是肯定不会超时的。所以可以这么写代码 12345678if(n &lt;= 100)&#123; ····//暴力代码&#125;if(n &gt; 100)&#123; ····//瞎搞&#125; 比如$2018NOIP$ $T3$摆渡车 对于$10$%的数据，满足$m=1$ 这时意味着每个人的等待时间都为0，所以 12345if(m == 1)&#123; cout &lt;&lt; 0 ; return 0;&#125; 就可以拿到10分 4.对拍在你写出骗分程序后，如果你所有题目都做完了且检验后，这时你就可以返回之前通过骗分做的题目，想一些正解。 还是以龙虎斗为例，在你打出一个可以满足$100$%数据范围的时间复杂度的程序后，你想检验它的正确性，这时候运用对拍可以十分方便地检验。 对拍模板： 1234567:loopshuju.exebaoli.exeshiyan.exefc fan.out fan1.outif %errorlevel%==0 goto looppause 新建一个.txt文件，将上面的代码复制进去。再将后缀名改为.bat，文件名任意。 其中shuju.exe是你出数据的程序，shiyan.exe是你想的“正解”，baoli.exe是你打的暴力程序。 fan.out和fan1.out分别是你baoli和shiyan的输出文件。 这些东西需要放在同一个文件夹里，然后双击这个文件名.bat就可以开始愉快的对拍了。 5.例题1.最大连续和首先看到$10$%的数据所有数都是正数，这是只要把所有数加起来就是结果。 对于$30$%的数据，我们很容易可以写出一个暴力。 12345678910ans = a[1]; for(int i = 1; i &lt;= n; i ++) for(int j = i; j &lt;= n; j ++) &#123; int sum = 0; for(int k = i; k &lt;= j; k ++)&#123; sum += a[k]; &#125; ans = max(ans , sum); &#125; 对于$50$%的数据，在$30$%的程序基础上加入前缀和优化。 对于$80$%的数据，可以考虑进行二分（数据过水，在洛谷上被水过去了） 对于$100$%的数据，定义$dp[i]$为$1$~$i$的最大连续和。 对于$a[i]$，明显有两种选择，一种是取之前的最大连续和，一种是不取之前的最大连续和，以这个数为开头。 1dp[i] = max(a[i] , dp[i - 1] + a[i]); 2.$2017NOIP$ $T4$ 跳房子首先观察题目，发现题目中存在无解的情况，所以可以先加入特判是否存在答案。判断条件就是所有格子的最大和未超过$k$的话，输出无解。 接下来观察数据范围，发现$1,2$组数据$n$的范围较小，可以考虑$dfs$(见题目目录下1.cpp) 可以在该程序的基础上加上二分进行优化(见题目目录下2.cpp) 继续观察数据范围，发现前$5$组数据$n&lt;=500$，可以考虑用朴素$dp$求解 定义$dp[pos]$为从起点到$pos$格能获得的最大分数， 不难发现$dp[pos]$可以由某个格$i$跳$j$步到达 所以有方程$dp[pos]=max(dp[pos],dp[i]+s[i+j])$ 其中$0&lt;=i&lt;n,left&lt;=j&lt;=right,pos = i + j$，$left,right$分别是能跳的步数的左边界和右边界。时间复杂度$O(n^2)$（见题目目录下3.cpp） 这样本题就可以拿到$50$分了 如果想拿到满分需要加入单调队列优化$dp$，这里不再赘述（其实是我不会） 6.总结骗分是种艺术，在考场上灵活运用骗分技巧可以为你争取部分分。但是这并不意味着你不用去思考这道题目的正解，要知道思考正解远比想尽办法骗分更有意义。]]></content>
+    <content type="text"><![CDATA[0.写在前面在NOIP$CSP$的考场上，很多题目我们在考场上往往无法想到正解（当然大佬除外）。这时候我们就需要一些骗分技巧来为自己争取一些部分分。 1.骗分的意义首先我们要了解什么是子任务。 对于一道题，它可能存在多个子任务。这些子任务的数据往往具有某些特点或者在某个小范围内，骗分的意义就是在打不出正解的情况下拿到这些子任务的分数。 例如$2018NOIP$ $T2$中的龙虎斗，它的子任务分布是这样的 【数据规模与约定】 $1 &lt; m &lt; n,1 ≤ p1 ≤ n.$ 对于$20$%的数据,$n = 3, m = 2, ci = 1, s1,s2 ≤ 100$. 另有$20$%的数据,$n ≤ 10, p1 = m, ci = 1, s1,s2 ≤ 100$. 对于$20$%的数据,$n = 3, m = 2, ci = 1,s1,s2 ≤ 100$. 对于$60$%的数据,$n ≤ 100, ci = 1,s1,s2 ≤ 100$. 对于$80$%的数据,$n ≤ 100, ci,s1,s2 ≤ 100$. 对于$100$%的数据,$n ≤ 10^5, ci = 1, s1,s2 ≤ 10^9$. 观察可以发现,$80$%的数据都很小，这时候我们就可以用暴力来拿到这$80$分。 2.基础的骗分1.输样例一道题目都会给你输入输出样例，如果你想不出其他解决该问题的方法，可以尝试直接输出样例，这就是考验你$rp$的时候了 例题：$2018NOIP$ $T4$对称二叉树 输出第二个样例即$3$可以拿到32分 没错就是这段代码可以为你拿到32分 1234567891011#include &lt;bits/stdc++.h&gt;using namespace std;int main() &#123; //freopen("tree.in", "r", stdin); //freopen("tree.out", "w" ,stdout); cout &lt;&lt; 3; return 0;&#125; 当一道题目包含无解的情况时，也可以通过输出无解来获得部分分 2.输出随机数这个也是考验$rp$的，根据数据范围输出随机数。 随机数生成代码 123456789#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; srand(time(0)); //随机种子 printf("%d" , rand()%b + a) //输出一个范围在a~a+b-1的随机数 return 0;&#125; 需要注意的是随机数的生成范围在不同操作系统下是不一样的，在Windows下是$0$~$32767$ 由于篇幅限制，基础的骗分技巧不再赘述。 3.高级骗分技巧1.打表很多人可能认为打表是最基础的骗分技巧，但是打表也是有艺术的。 打表的用处很多，例如 1 减小时间复杂度 2 找规律 3 ······ 先说说如何减小时间复杂度。 当一些题目数据范围很小时，我们可以考虑通过打表使程序运行效率提高，例如$2008NOIP$ $T3$传球游戏 这是我$90$分的程序 1234567891011121314151617181920212223242526#include&lt;bits/stdc++.h&gt;using namespace std;int f[31][31],n,m;int dfs(int x,int y)&#123; if(f[x][y]) return f[x][y]; if(y==0) &#123; if(x==1)return f[x][y]=1; else return f[x][y]=0; &#125; if(x==n) &#123; return f[x][y]=dfs(x-1,y-1)+dfs(1,y-1); &#125; else if(x==1) return f[x][y]=dfs(n,y-1)+dfs(x+1,y-1); else return f[x][y]=dfs(x-1,y-1)+dfs(x+1,y-1);&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;m); printf("%d",dfs(1,m)); return 0;&#125; 但是这个程序会被$10$ $29$这个数据给卡超时 这个时候加入打表就可以完美$AC$这道题 12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int f[31][31],n,m;int dfs(int x,int y)&#123; if(f[x][y]) return f[x][y]; if(y==0) &#123; if(x==1)return f[x][y]=1; else return f[x][y]=0; &#125; if(x==n) &#123; return f[x][y]=dfs(x-1,y-1)+dfs(1,y-1); &#125; else if(x==1) return f[x][y]=dfs(n,y-1)+dfs(x+1,y-1); else return f[x][y]=dfs(x-1,y-1)+dfs(x+1,y-1);&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;m); if(n==10&amp;&amp;m==29) &#123; cout&lt;&lt;0; return 0; &#125; printf("%d",dfs(1,m)); return 0;&#125; 这段程序比上一段程序多出来的部分就是 12345if(n==10&amp;&amp;m==29) &#123; cout&lt;&lt;0; return 0; &#125; 对于一些对素数判断存在要求的题目，我们可以预处理出素数表，减少判断的时间。 大致是这样的 123456789101112131415161718192021222324252627282930#include&lt;bits/stdc++.h&gt;using namespace std; bool prime(long long num) //快速判断素数&#123; if (num == 2 || num == 3) &#123; return true; &#125; if (num % 6 != 1 &amp;&amp; num % 6 != 5) &#123; return false; &#125; for (int i = 5; i*i &lt;= num; i += 6) &#123; if (num % i == 0 || num % (i+2) == 0) &#123; return false; &#125; &#125; return true;&#125; int main()&#123; freopen("prime.out","w",stdout);//将表输出到文件里，方便复制 for(int i = 2; i &lt;= n; i ++) if(prime(i)) cout &lt;&lt; "i,"//加入逗号方便复制 return 0;&#125; 这时候将prime.out里的数字复制到表里就可以了 1Prime[LEN]=&#123;2,3,5,···&#125; 再来说说找规律。 对于一些题目，我们可以输出一些小数据的答案，观察答案与输入数据的关系，这种方法一般适用于数论题。 如$1999NOIP$ $T1$? Cantor表 可以通过行列和答案的关系找出某种规律。 打表的方式千变万化，所以有着”打表出省一”之说（笑），当然也不能过分依赖打表，造成思维惰性。 2.dfs如果你熟练掌握了$dfs$（深度优先搜索），你会发现“万物皆可搜”。 当一个题目打不出来怎么办？先打个$dfs$，可能这不是最优解，但是$dfs$思路清晰，码量小，可以拿到部分分。而且有时它也可以便于你想出正解。动态规划的思想有部分就来自于搜索。 例如$2018NOIP$ $T4$对称二叉树 如果你熟练掌握了二叉树的知识，你会很容易写出一个$dfs$，而$dfs$就是这道题目的正解。。。 所以万物皆可搜 万物皆可搜 万物皆可搜 3.灵活运用子任务的数据范围或数据特点数据范围往往不是无意义的，它存在的意义就是卡掉某些错解。 先上张图 数据范围对选择算法非常重要，算法的选择将会决定你是否能做出这道题。 根据子任务的数据范围，我们可以通过它来选择不同子任务用的算法。 如开头提到的龙虎斗，对于$80$分的数据$n&lt;=100$,用$O(n^2)$的算法是肯定不会超时的。所以可以这么写代码 12345678if(n &lt;= 100)&#123; ····//暴力代码&#125;if(n &gt; 100)&#123; ····//瞎搞&#125; 比如$2018NOIP$ $T3$摆渡车 对于$10$%的数据，满足$m=1$ 这时意味着每个人的等待时间都为0，所以 12345if(m == 1)&#123; cout &lt;&lt; 0 ; return 0;&#125; 就可以拿到10分 4.对拍在你写出骗分程序后，如果你所有题目都做完了且检验后，这时你就可以返回之前通过骗分做的题目，想一些正解。 还是以龙虎斗为例，在你打出一个可以满足$100$%数据范围的时间复杂度的程序后，你想检验它的正确性，这时候运用对拍可以十分方便地检验。 对拍模板： 1234567:loopshuju.exebaoli.exeshiyan.exefc fan.out fan1.outif %errorlevel%==0 goto looppause 新建一个.txt文件，将上面的代码复制进去。再将后缀名改为.bat，文件名任意。 其中shuju.exe是你出数据的程序，shiyan.exe是你想的“正解”，baoli.exe是你打的暴力程序。 fan.out和fan1.out分别是你baoli和shiyan的输出文件。 这些东西需要放在同一个文件夹里，然后双击这个文件名.bat就可以开始愉快的对拍了。 5.例题1.最大连续和首先看到$10$%的数据所有数都是正数，这是只要把所有数加起来就是结果。 对于$30$%的数据，我们很容易可以写出一个暴力。 12345678910ans = a[1]; for(int i = 1; i &lt;= n; i ++) for(int j = i; j &lt;= n; j ++) &#123; int sum = 0; for(int k = i; k &lt;= j; k ++)&#123; sum += a[k]; &#125; ans = max(ans , sum); &#125; 对于$50$%的数据，在$30$%的程序基础上加入前缀和优化。 对于$80$%的数据，可以考虑进行二分（数据过水，在洛谷上被水过去了） 对于$100$%的数据，定义$dp[i]$为$1$~$i$的最大连续和。 对于$a[i]$，明显有两种选择，一种是取之前的最大连续和，一种是不取之前的最大连续和，以这个数为开头。 1dp[i] = max(a[i] , dp[i - 1] + a[i]); 2.$2017NOIP$ $T4$ 跳房子首先观察题目，发现题目中存在无解的情况，所以可以先加入特判是否存在答案。判断条件就是所有格子的最大和未超过$k$的话，输出无解。 接下来观察数据范围，发现$1,2$组数据$n$的范围较小，可以考虑$dfs$(见题目目录下1.cpp) 可以在该程序的基础上加上二分进行优化(见题目目录下2.cpp) 继续观察数据范围，发现前$5$组数据$n&lt;=500$，可以考虑用朴素$dp$求解 定义$dp[pos]$为从起点到$pos$格能获得的最大分数， 不难发现$dp[pos]$可以由某个格$i$跳$j$步到达 所以有方程$dp[pos]=max(dp[pos],dp[i]+s[i+j])$ 其中$0&lt;=i&lt;n,left&lt;=j&lt;=right,pos = i + j$，$left,right$分别是能跳的步数的左边界和右边界。时间复杂度$O(n^2)$（见题目目录下3.cpp） 这样本题就可以拿到$50$分了 如果想拿到满分需要加入单调队列优化$dp$，这里不再赘述（其实是我不会） 6.总结骗分是种艺术，在考场上灵活运用骗分技巧可以为你争取部分分。但是这并不意味着你不用去思考这道题目的正解，要知道思考正解远比想尽办法骗分更有意义。]]></content>
       <tags>
         <tag>CSP</tag>
         <tag>骗分</tag>
@@ -102,11 +102,11 @@
     <content type="text"><![CDATA[一道字符串模拟题，思路如下： 1 输入时将两个时间存储 2 将两个时间化为以分钟做单位 3 得到中间时间与第一个时间的差 4 输出 注意：当时间或分钟数$&lt;=9$时，要用$0$补齐位数 Code 123456789101112131415161718192021222324252627282930#include&lt;bits/stdc++.h&gt;using namespace std;string s1,s2; int h1,h2,m1,m2;int main()&#123; ios::sync_with_stdio(false); cin&gt;&gt;s1&gt;&gt;s2; for(int i=0;i&lt;2;i++)//将时间存储 h1+=(s1[i]-'0')*pow(10,1-i),h2+=(s2[i]-'0')*pow(10,1-i); for(int i=3;i&lt;=4;i++) m1+=(s1[i]-'0')*pow(10,4-i),m2+=(s2[i]-'0')*pow(10,4-i); int ans=((h2*60+m2)-(h1*60+m1))/2;//求得中间时间与第一个时间的差 h1+=ans/60;//加上时间差 m1+=ans%60; if(m1&gt;=60)//如果分钟&gt;=60要进位 &#123; h1++; m1%=60; &#125; if(h1&lt;=9)//输出，&lt;=9的用0补齐 cout&lt;&lt;0&lt;&lt;h1&lt;&lt;":"; else cout&lt;&lt;h1&lt;&lt;":"; if(m1&lt;=9) cout&lt;&lt;0&lt;&lt;m1; else cout&lt;&lt;m1; return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>字符串</tag>
         <tag>洛谷</tag>
+        <tag>字符串</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -147,11 +147,11 @@
     <content type="text"><![CDATA[这题其实是一道很水的字符串模拟，不要被难度骗了 CF恶意评分又不是一两天了（雾） 注意题目中说到的 由直线或都是由曲线构成的 是指该字母的笔画（我理解题目理解了半天$qwq$） 具体思路： 1 应用$map$将由直线（或者曲线）构成的字母的映射值设为1 2 计算该字符串的所有对应的映射值之和，因为题目要求全为直线或全为曲线，所以当总和为$len$($len$为字符串长度)或$0$时，输出$YES$，否则输出$NO$ Code1234567891011121314151617181920212223242526272829#include&lt;bits/stdc++.h&gt;using namespace std;string s;map&lt;char,bool&gt; p;int main()&#123; ios::sync_with_stdio(false); p['A']=1;//打表 p['E']=1; p['F']=1; p['H']=1; p['I']=1; p['K']=1; p['L']=1; p['M']=1; p['N']=1; p['T']=1; p['V']=1; p['W']=1; p['X']=1; p['Y']=1; p['Z']=1; cin&gt;&gt;s; int sum=0; for(int i=0;i&lt;s.size();i++) sum+=p[s[i]];//统计映射值之和 if(sum==s.size() or sum==0) cout&lt;&lt;"YES";//判断 else cout&lt;&lt;"NO"; return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>字符串</tag>
         <tag>洛谷</tag>
+        <tag>字符串</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -184,8 +184,8 @@
     <content type="text"><![CDATA[1.什么是set 和 set的好处$set$的翻译为集合，是一个内部自动有序且不含重复元素(即满足集合的互异性)的$STL$容器，其内部采用“红黑树”实现。 什么是集合？点这 $set$的好处在于自动完成去重和按升序排序 2.举个栗子比如这题 1.普通作法看到数据范围这么水肯定想到用桶排 Code12345678910111213141516171819#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int b[1001],n,i,j,m=0,x; memset(b,0,sizeof(b)); cin&gt;&gt;n; for(i=1;i&lt;=n;i++) &#123; cin&gt;&gt;x; if(b[x]==0) m++; b[x]++; &#125; cout&lt;&lt;m&lt;&lt;endl; for(i=0;i&lt;=1000;i++) if(b[i]&gt;0) cout&lt;&lt;i&lt;&lt;" "; cout&lt;&lt;endl; return 0;&#125; 2.set如果你会了$set$，这道题就可以这么打 Code1234567891011121314151617181920#include&lt;bits/stdc++.h&gt;using namespace std;int n;set&lt;int&gt; st;int main()&#123; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++) &#123; int x; scanf("%d",&amp;x); st.insert(x); &#125; printf("%d\n",st.size()); for(set&lt;int&gt;::iterator it= st.begin(); it!=st.end(); it++) &#123; printf("%d ",*it); &#125; return 0;&#125; 如果数据范围大了话，明显不能用桶排解决，这时候$set$的好处就可以体现出来。 领会了$set$的好处之后，接下来让我们了解 3.set的定义使用$set$之前，必须添加$set$头文件，即1#include&lt;set&gt; 也可以打好我们的$bits/stdc++.h$ 同时必须要有 1using namespace std; 定义一个$set$的方法： 1set&lt;typename&gt; name; 其中$typename$为任何基本类型或者容器，$name$为这个集合的名字 同时$set$也支持定义数组，如: 1set&lt;typename&gt; name[MAXN] 即定义了$MAXN$个$set$容器 4.set的访问一大坑点是$set$只能通过迭代器访问 1.定义一个迭代器1set&lt;typename&gt;::iterator it; 即定义一个名为$it$的迭代器 2.通过迭代器访问注意事项： 1 $set$不支持类似*$(it+i)$的访问 2 $set$也不支持$it&lt;name.end()$这种访问 我们需要使用*$it$来访问$set$中的元素 5.set的常用函数1.insert()1.作用$insert()$用来插入一个数到$set$中，并自动排序+去重 2.时间复杂度$O(log_{2}n)$ 3.用法例如，以下一段代码输出$1$ $2$ $3 $ 123456for(int i=3;i&gt;=1;i--) a.insert(i);a.insert(1);for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 2.begin()和end()1.作用分别用来获取$set$容器的首地址和尾地址 用法跟其他$STL$容器一样这里不再赘述 3.size()1.作用用于获取$set$容器中元素的个数 2.时间复杂度$O(1)$ 3.用法例如，以下一段代码输出$3$ 123for(int i=3;i&gt;=1;i--) a.insert(i);a.insert(1);cout&lt;&lt;a.size(); 4.clear()1.作用用于清空$set$容器中的所有元素 2.时间复杂度$O(n)$ ($n$为$set$中的元素个数) 3.用法例如，以下一段代码输出$1$ 1234for(int i=3;i&gt;=1;i--) a.insert(i);a.clear();a.insert(1);cout&lt;&lt;a.size(); 5.erase()1.作用可以用来删除单个元素也可以用来删除一段区间的元素 1.删除单个元素 1.时间复杂度$O(1)$ (使用迭代器) $O(log_{2}n)$ (使用欲删除元素的值) 2.用法1.$erase(it)$ $it$为欲删除的元素的迭代器 例如，以下一段代码输出$2$ $3$ 123456for(int i=3;i&gt;=1;i--) a.insert(i);a.erase(a.begin());for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 2.$erase(value)$ $value$为欲删除元素的值 例如以下一段代码输出$1$ $3$ 123456for(int i=3;i&gt;=1;i--) a.insert(i);a.erase(2);for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 2.删除一个区间的元素 1.时间复杂度$O(right-left)$ $(左闭右开区间[left,right))$ 2.用法$erase(left,right)$用来删除左闭右开区间[$left$,$right$)之间的元素 例如，以下一段代码输出$1$ 1234567for(int i=5;i&gt;=1;i--) a.insert(i);set&lt;int&gt;::iterator it=a.find(2);a.erase(it,a.end());for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 6.find()1.作用返回元素在$set$中的迭代器 2.时间复杂度$O(log_{2}n)$ ($n$为$set$中的元素个数) 3.用法例如，以下一段代码输出$2$ 12for(int i=5;i&gt;=1;i--) a.insert(i);cout&lt;&lt;*a.find(2); 6.推荐例题 1 洛谷P1059 明明的随机数 之后还会继续放上]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>学习笔记</tag>
         <tag>set</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -246,11 +246,11 @@
     <content type="text"><![CDATA[一道字符串模拟，直接暴力枚举即可Code123456789101112131415161718192021222324252627282930#include&lt;bits/stdc++.h&gt;using namespace std;string s;int main()&#123; cin &gt;&gt; s; for(int i = 0 ; i &lt; s.size(); i++) &#123; int ans = 1; char c = s[i]; for(int j = i + 1 ; j &lt; s.size(); j++) &#123; if(s[j] != c)//不一样直接退出 &#123; break; &#125; else &#123; ans++; &#125; if(ans == 7)//有七个一样的输出YES &#123; puts("YES"); return 0; &#125; &#125; &#125; puts("NO");//不危险输出NO return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>字符串</tag>
         <tag>洛谷</tag>
+        <tag>字符串</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -289,11 +289,11 @@
     <content type="text"><![CDATA[一道字符串模拟题首先我们知道 偶数+偶数=偶数 偶数+奇数=奇数 然后我们就可以对$N$进行分类讨论： 当$N\le3$时，直接输出字符串即可 当$N=2k$ $(k\ge2)$时，可以把$N$拆分成若干个长度为2的字符串，在两个字符串之间添上-号 当$N=2k+1$ $(k\ge2)$时，可以把$N$拆分成一个长度为3的字符串和若干个长度为2的字符串，在两个字符串之间添上-号 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&lt;bits/stdc++.h&gt;using namespace std;string s;int sum;int n;int main()&#123; scanf("%d",&amp;n); cin&gt;&gt;s; if(n&lt;=3) //如果n&lt;=3，直接输出 &#123; cout&lt;&lt;s; return 0; &#125; if(n%2==0) //n为偶数则拆分成若干个长度为2的字符串 &#123; for(int i=0; i&lt;n; i++) &#123; sum++; printf("%c",s[i]); if(i==n-1) return 0; if(sum==2) &#123; printf("-"); sum=0; &#125; &#125; &#125; else //n为奇数则拆分成一个长度为3的字符串和若干个长度为2的字符串 &#123; for(int i=0; i&lt;3; i++) &#123; printf("%c",s[i]); &#125; printf("-"); for(int i=3; i&lt;n; i++) &#123; sum++; printf("%c",s[i]); if(i==n-1) return 0; if(sum==2) &#123; printf("-"); sum=0; &#125; &#125; &#125; return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>字符串</tag>
         <tag>洛谷</tag>
+        <tag>字符串</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -302,8 +302,8 @@
     <content type="text"><![CDATA[如题，输出奇数位上的字母即可AC 注意字符串下标是从0开始的！ Code12345678910111213#include&lt;bits/stdc++.h&gt;using namespace std;char s[100010];int main()&#123; gets(s); for(int i=0;i&lt;strlen(s);i+=2)//输出奇数位 &#123; printf("%c",s[i]); &#125; printf("\n");//记得换行 return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>字符串</tag>
         <tag>洛谷</tag>
+        <tag>字符串</tag>
         <tag>题解</tag>
         <tag>AtCoder</tag>
         <tag>模拟</tag>
@@ -315,8 +315,8 @@
     <content type="text"><![CDATA[一道简单的字符串模拟，刷难度真给力 本蒟蒻的思路比较麻烦，但个人认为比较好理解 1 先将字符串倒序存放 2 按照规则改变字母 3 比较 Code：1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;bits/stdc++.h&gt;using namespace std;char s1[100010],s2[100010];int len;int main()&#123; cin&gt;&gt;s1; for(int i=strlen(s1)-1; i&gt;=0; i--) &#123; s2[len++]=s1[i];//倒序存放 &#125; for(int i=0; i&lt;strlen(s2); i++) &#123; switch(s2[i])//按照规则改变字母 &#123; case 'b': &#123; s2[i]='d'; break; &#125; case 'd': &#123; s2[i]='b'; break; &#125; case 'p': &#123; s2[i]='q'; break; &#125; case 'q': &#123; s2[i]='p'; break; &#125; &#125; &#125; if(strcmp(s1,s2)==0) cout&lt;&lt;"Yes"&lt;&lt;endl;//比较，注意如果两个字符串一样，strcmp返回0 else cout&lt;&lt;"No"&lt;&lt;endl;//记得换行 return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>字符串</tag>
         <tag>洛谷</tag>
+        <tag>字符串</tag>
         <tag>题解</tag>
         <tag>AtCoder</tag>
         <tag>模拟</tag>
@@ -330,8 +330,8 @@
         <tag>C++</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
