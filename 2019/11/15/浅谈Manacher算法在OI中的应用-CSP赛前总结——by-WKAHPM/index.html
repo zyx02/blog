@@ -115,13 +115,23 @@
   daovoice('update');
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WKAHPM的博客">
-<meta property="og:url" content="http://zyx02.github.io/blog/tags/CSP/index.html">
+  <meta name="description" content="浅谈Manacher算法在OI中的应用——by WKAHPM0.什么是Manacher Manachar算法主要是处理字符串中关于回文串的问题的，它可以在 O（n） 的时间处理出以字符串中每一个字符为中心的回文串半径——摘自百度百科  1.从暴力谈起先看一道例题洛谷P3805 题意十分简单明了，求一个字符串$S$中的最大回文子串长度 很容易想到一种$O(N^3)$算法，枚举子串的左边界$l$右边界">
+<meta name="keywords" content="学习笔记,Manacher">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈Manacher算法在OI中的应用&amp;CSP赛前总结——by WKAHPM">
+<meta property="og:url" content="http://zyx02.github.io/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/index.html">
 <meta property="og:site_name" content="WKAHPM的博客">
+<meta property="og:description" content="浅谈Manacher算法在OI中的应用——by WKAHPM0.什么是Manacher Manachar算法主要是处理字符串中关于回文串的问题的，它可以在 O（n） 的时间处理出以字符串中每一个字符为中心的回文串半径——摘自百度百科  1.从暴力谈起先看一道例题洛谷P3805 题意十分简单明了，求一个字符串$S$中的最大回文子串长度 很容易想到一种$O(N^3)$算法，枚举子串的左边界$l$右边界">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/fROsdocQh2aIuX8.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/aoX7wxyB9RrE4md.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/myUHdKNTeh6Ltbr.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/2ucSPiy8Qrl3WHz.png">
+<meta property="og:updated_time" content="2019-11-15T13:48:20.140Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WKAHPM的博客">
+<meta name="twitter:title" content="浅谈Manacher算法在OI中的应用&amp;CSP赛前总结——by WKAHPM">
+<meta name="twitter:description" content="浅谈Manacher算法在OI中的应用——by WKAHPM0.什么是Manacher Manachar算法主要是处理字符串中关于回文串的问题的，它可以在 O（n） 的时间处理出以字符串中每一个字符为中心的回文串半径——摘自百度百科  1.从暴力谈起先看一道例题洛谷P3805 题意十分简单明了，求一个字符串$S$中的最大回文子串长度 很容易想到一种$O(N^3)$算法，枚举子串的左边界$l$右边界">
+<meta name="twitter:image" content="https://i.loli.net/2019/11/15/fROsdocQh2aIuX8.png">
 
 
 
@@ -130,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://zyx02.github.io/blog/tags/CSP/">
+  <link rel="canonical" href="http://zyx02.github.io/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/">
 
 
 
@@ -140,7 +150,7 @@
   };
 </script>
 
-  <title>标签: CSP | WKAHPM的博客</title>
+  <title>浅谈Manacher算法在OI中的应用&CSP赛前总结——by WKAHPM | WKAHPM的博客</title>
   
 
 
@@ -204,7 +214,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/zyx02" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,7 +307,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -373,79 +383,445 @@ WIDGET = {FID: 'DmIm0qllkB'}
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>CSP<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zyx02.github.io/blog/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WKAHPM">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WKAHPM的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/blog/2019/10/21/浅谈OI中的骗分—技巧——by-WKAHPM/" itemprop="url">
-            
-              <span itemprop="name">浅谈OI中的骗分技巧——by WKAHPM</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">浅谈Manacher算法在OI中的应用&CSP赛前总结——by WKAHPM
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-21T22:23:26+08:00" content="2019-10-21">
-          10-21
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-15 21:47:40 / 修改时间：21:48:20" itemprop="dateCreated datePublished" datetime="2019-11-15T21:47:40+08:00">2019-11-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="浅谈Manacher算法在OI中的应用——by-WKAHPM"><a href="#浅谈Manacher算法在OI中的应用——by-WKAHPM" class="headerlink" title="浅谈Manacher算法在OI中的应用——by WKAHPM"></a>浅谈Manacher算法在OI中的应用——by WKAHPM</h2><h4 id="0-什么是Manacher"><a href="#0-什么是Manacher" class="headerlink" title="0.什么是Manacher"></a>0.什么是Manacher</h4><blockquote>
+<p>Manachar算法主要是处理字符串中关于回文串的问题的，它可以在 O（n） 的时间处理出以字符串中每一个字符为中心的回文串半径——摘自百度百科</p>
+</blockquote>
+<h4 id="1-从暴力谈起"><a href="#1-从暴力谈起" class="headerlink" title="1.从暴力谈起"></a>1.从暴力谈起</h4><p>先看一道例题<a href="https://www.luogu.org/problem/P3805" target="_blank" rel="noopener">洛谷P3805</a></p>
+<p>题意十分简单明了，求一个字符串$S$中的最大回文子串长度</p>
+<p>很容易想到一种$O(N^3)$算法，枚举子串的左边界$l$右边界$r$,判断该子串是否回文即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; len; l ++)</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> r = l; r &lt; len; r ++)</span><br><span class="line">    <span class="keyword">if</span>(check(l , r)) ans = max(ans , r - l + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>在此算法上加入<del>亿</del>一点简单优化可以优化到$O(N^2)$,<strong>对于长度为奇数的回文字符串，回文子串的中心一定是某个字符，对于长度为偶数的回文字符串，回文子串的中心一定是两个字符之间的空隙</strong>，一种显然的作法是枚举这些回文中心，向两边拓展直到字符不相等或到达边界</p>
+<p>由于$WKAHPM$比较懒,所以就不贴代码了。</p>
+<p>暴力的缺点：</p>
+<ul>
+<li>1.需要分类讨论</li>
+<li>2.枚举了很多没用的子串</li>
+</ul>
+<p>这时候我们就需要再加入<del>亿</del>一点优化。</p>
+<h4 id="2-Manacher的初始化"><a href="#2-Manacher的初始化" class="headerlink" title="2.Manacher的初始化"></a>2.Manacher的初始化</h4><blockquote>
+<p>暴力的缺点——需要分类讨论</p>
+</blockquote>
+<p>如何解决这个问题？一种作法是在每个字符之间再加入一个分隔字符（<strong>当然这个字符不能存在在原本的字符串中</strong>），举个栗子,比如字符串$ababac$：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>a</th>
+<th></th>
+<th>b</th>
+<th></th>
+<th>a</th>
+<th></th>
+<th>b</th>
+<th></th>
+<th>a</th>
+<th></th>
+<th>c</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>b</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>b</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>c</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这个方法有效地避免了分类讨论，容易发现我们插入了$N+1$个#号，字符串的长度变为$2N+1$，为奇数，<del>是不是很神奇呢</del></p>
+<p>为了防止越界情况，我们在开头和结尾再加入一个字符，比如$@$，这部分的代码可以这么写</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">news</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	s_new += <span class="string">"@#"</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; s.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s_new += s[i];</span><br><span class="line">		s_new += <span class="string">'#'</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	s_new += <span class="string">'@'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-Manacher的原理"><a href="#3-Manacher的原理" class="headerlink" title="3.Manacher的原理"></a>3.Manacher的原理</h4><p> 定义$p[i]$表示以$i$为对称中心能扩展的<strong>最大回文子串半径</strong>，即左/右边界到对称中心的距离。</p>
+<p>$Manacher$的算法思想就是快速求出$p$数组。</p>
+<p>我们来看看$p$数组与答案的关系(这里省略@)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>s</th>
+<th>#</th>
+<th>a</th>
+<th>#</th>
+<th>b</th>
+<th>#</th>
+<th>a</th>
+<th>#</th>
+<th>b</th>
+<th>#</th>
+<th>a</th>
+<th>#</th>
+<th>c</th>
+<th>#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ans</strong></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>p</strong></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>6</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>显然有$ans[i]=p[i]-1$</p>
+<p>证明：</p>
+<p>设回文子串$s$原来的长度为$len$，对称中心为$i$；</p>
+<p>则$s$插入字符后的长度变为$2\times len+1$；</p>
+<p>此时$p[i]=(2\times len+1+1)/2=len+1$,所以$p[i]-1$即为答案</p>
+<p>所以求出$p[i]$就可以求出答案</p>
+<h4 id="4-Manacher的实现"><a href="#4-Manacher的实现" class="headerlink" title="4.Manacher的实现"></a>4.Manacher的实现</h4><p>$Manacher$的实现用到了回文子串的一个性质——对称性</p>
+<p>设$mr$为之前找到的回文子串的最右边，$mid$为该回文子串的对称中心。</p>
+<p>假设当前枚举到第$i$位，因为枚举过$mid$了，所以显然有$i&gt;mid$，接下来需要分类讨论两种情况：</p>
+<p>为了方便讨论，设$j$为$i$以$mid$为对称中心的对称点，$s_{i}$是以$i$为对称中心的回文子串，$s_{j}$是以$j$为对称中心的回文子串</p>
+<h5 id="1-i-lt-mr"><a href="#1-i-lt-mr" class="headerlink" title="(1)i &lt; mr"></a>(1)i &lt; mr</h5><p>这时候我们又能分2种情况</p>
+<ul>
+<li>1 $s_{i}$的右边界不大于$mr$</li>
+</ul>
+<p>如图</p>
+<p><img src="https://i.loli.net/2019/11/15/fROsdocQh2aIuX8.png" alt="TIM截图20191115112913.png"></p>
+<p>由对称性知，此时$p[i]=p[j]$，当$s_{i}$的右边界在$mr$上时，$s_{i}$可向外拓展</p>
+<ul>
+<li>2 $s_{i}$的右边界大于$mr$</li>
+</ul>
+<p>如图</p>
+<p><img src="https://i.loli.net/2019/11/15/aoX7wxyB9RrE4md.png" alt="TIM截图20191115132136.png"></p>
+<p>这时我们只能确定α段是具有对称性的，此时$p[i]=mr-i$</p>
+<h5 id="2-i-gt-mr"><a href="#2-i-gt-mr" class="headerlink" title="(2) i &gt;= mr"></a>(2) i &gt;= mr</h5><p>此时我们无法通过对称性得到$p[i]$，所以$p[i]=1$</p>
+<p>代码实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mx=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> maxn=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> id=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s_new.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;mx)</span><br><span class="line">		  ans[i]=min(ans[<span class="number">2</span>*id-i],mx-i);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		  ans[i]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(s_new[i-ans[i]]==s_new[i+ans[i]]) ans[i]++;</span><br><span class="line">		<span class="keyword">if</span>(mx&lt;i+ans[i])</span><br><span class="line">		&#123;</span><br><span class="line">			id=i;</span><br><span class="line">			mx=i+ans[i];</span><br><span class="line">		&#125;</span><br><span class="line">		maxn=max(maxn,ans[i]<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-例题"><a href="#5-例题" class="headerlink" title="5.例题"></a>5.例题</h4><p><a href="https://www.luogu.org/problem/P5018" target="_blank" rel="noopener">洛谷P5018对称二叉树</a></p>
+<p>这题可以用$Manacher$来解决。</p>
+<p>可以先用中序遍历对每个节点编号，利用$a$和$size$数组存放每个节点的权值和以这个节点为根节点的二叉树的节点数，对每个数组进行$Manacher$，将先后两次的以第$i$个点为对称中心的最大回文子串半径存放在$p1[i],p2[i]$中。</p>
+<p>另外本题不需要初始化，$Manacher$初始化的原因是可能存在偶数长度的回文子串，但在对称二叉树中不可能存在偶数长度的回文子串，因为在对称二叉树中，除根节点以外每一个左儿子都有一个右儿子与之对应，所以节点数为奇数个。</p>
+<p>求出$p1,p2$后，枚举编号$1$~$N$，判断以$i$为根节点的二叉树是否为对称二叉树，如果是则对$ans$和$size[i]$取$max$，对称二叉树需要满足两个条件：</p>
+<ul>
+<li><p>1 权值对称</p>
+</li>
+<li><p>2 结构对称</p>
+</li>
+</ul>
+<p>体现在程序中就是$p1[i] \times 2 - 1 &gt;= size[i]$并且$p2[i] \times 2 - 1 == size[i]$</p>
+<p>首先解释一下为什么是$p1[i] \times 2 - 1$而不是$p1[i]-1$</p>
+<p>$p1[i] \times 2 - 1$是因为之前的$Manacher$我们没有进行初始化，所以此时的$p1[i]$要乘2</p>
+<p>接着解释一下为什么是$p1[i] \times 2 - 1 &gt;= size[i]$</p>
+<p>如图</p>
+<p><img src="https://i.loli.net/2019/11/15/myUHdKNTeh6Ltbr.png" alt="TIM截图20191115154337.png"></p>
+<p>如果写成$p1[i] \times 2 - 1 == size[i]$的话，则对于编号为$5$的节点，$p1[5] \ times 2 - 1 =5$,而$size[5]=3$，所以当节点权值相等时，可能出现$p1[i] \times 2 - 1 &gt; size[i]$的情况。</p>
+<h4 id="6-结语"><a href="#6-结语" class="headerlink" title="6.结语"></a>6.结语</h4><p>明天就是$CSP$了，大家调整好心态，多背背模板，基本上$t1t2$过了$t3t4$打一下暴力就省一了，祝各位$RP++$(<del>这不是毒奶</del>)</p>
+<p>愿<img src="https://i.loli.net/2019/11/15/2ucSPiy8Qrl3WHz.png" alt="TIM截图20191115171839.png">降临到你身边</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/学习笔记/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/blog/tags/Manacher/" rel="tag"><i class="fa fa-tag"></i> Manacher</a>
+          
+        </div>
+      
+      <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/">浅谈Manacher算法在OI中的应用&CSP赛前总结——by WKAHPM</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 WKAHPM 的个人博客">WKAHPM</a></p>
+  <p><span>发布时间:</span>2019年11月15日 - 21:47</p>
+  <p><span>最后更新:</span>2019年11月15日 - 21:48</p>
+  <p><span>原始链接:</span><a href="/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/" title="浅谈Manacher算法在OI中的应用&CSP赛前总结——by WKAHPM">http://zyx02.github.io/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zyx02.github.io/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+      </div>
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/10/21/浅谈OI中的骗分—技巧——by-WKAHPM/" rel="next" title="浅谈OI中的骗分技巧——by WKAHPM">
+                <i class="fa fa-chevron-left"></i> 浅谈OI中的骗分技巧——by WKAHPM
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -466,8 +842,17 @@ WIDGET = {FID: 'DmIm0qllkB'}
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -675,6 +1060,23 @@ show_date_time();
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浅谈Manacher算法在OI中的应用——by-WKAHPM"><span class="nav-number">1.</span> <span class="nav-text">浅谈Manacher算法在OI中的应用——by WKAHPM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0-什么是Manacher"><span class="nav-number">1.0.1.</span> <span class="nav-text">0.什么是Manacher</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-从暴力谈起"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.从暴力谈起</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Manacher的初始化"><span class="nav-number">1.0.3.</span> <span class="nav-text">2.Manacher的初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Manacher的原理"><span class="nav-number">1.0.4.</span> <span class="nav-text">3.Manacher的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Manacher的实现"><span class="nav-number">1.0.5.</span> <span class="nav-text">4.Manacher的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-i-lt-mr"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">(1)i &lt; mr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-i-gt-mr"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">(2) i &gt;= mr</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-例题"><span class="nav-number">1.0.6.</span> <span class="nav-text">5.例题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-结语"><span class="nav-number">1.0.7.</span> <span class="nav-text">6.结语</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -844,6 +1246,10 @@ show_date_time();
 
 
   
+  <script src="/blog/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/blog/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -1322,7 +1728,7 @@ show_date_time();
   <script src="/blog/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 

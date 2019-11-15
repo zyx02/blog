@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://zyx02.github.io/blog/"/>
-  <updated>2019-11-01T10:01:21.670Z</updated>
+  <updated>2019-11-15T13:48:20.140Z</updated>
   <id>http://zyx02.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈Manacher算法在OI中的应用&amp;CSP赛前总结——by WKAHPM</title>
+    <link href="http://zyx02.github.io/blog/2019/11/15/%E6%B5%85%E8%B0%88Manacher%E7%AE%97%E6%B3%95%E5%9C%A8OI%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-CSP%E8%B5%9B%E5%89%8D%E6%80%BB%E7%BB%93%E2%80%94%E2%80%94by-WKAHPM/"/>
+    <id>http://zyx02.github.io/blog/2019/11/15/浅谈Manacher算法在OI中的应用-CSP赛前总结——by-WKAHPM/</id>
+    <published>2019-11-15T13:47:40.000Z</published>
+    <updated>2019-11-15T13:48:20.140Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="浅谈Manacher算法在OI中的应用——by-WKAHPM"><a href="#浅谈Manacher算法在OI中的应用——by-WKAHPM" class="headerlink" title="浅谈Manacher算法在OI中的应用——by WKAHPM"></a>浅谈Manacher算法在OI中的应用——by WKAHPM</h2><h4 id="0-什么是Manacher"><a href="#0-什么是Manacher" class="headerlink" title="0.什么是Manacher"></a>0.什么是Manacher</h4><blockquote><p>Manachar算法主要是处理字符串中关于回文串的问题的，它可以在 O（n） 的时间处理出以字符串中每一个字符为中心的回文串半径——摘自百度百科</p></blockquote><h4 id="1-从暴力谈起"><a href="#1-从暴力谈起" class="headerlink" title="1.从暴力谈起"></a>1.从暴力谈起</h4><p>先看一道例题<a href="https://www.luogu.org/problem/P3805" target="_blank" rel="noopener">洛谷P3805</a></p><p>题意十分简单明了，求一个字符串$S$中的最大回文子串长度</p><p>很容易想到一种$O(N^3)$算法，枚举子串的左边界$l$右边界$r$,判断该子串是否回文即可。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; len; l ++)</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> r = l; r &lt; len; r ++)</span><br><span class="line">    <span class="keyword">if</span>(check(l , r)) ans = max(ans , r - l + <span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>在此算法上加入<del>亿</del>一点简单优化可以优化到$O(N^2)$,<strong>对于长度为奇数的回文字符串，回文子串的中心一定是某个字符，对于长度为偶数的回文字符串，回文子串的中心一定是两个字符之间的空隙</strong>，一种显然的作法是枚举这些回文中心，向两边拓展直到字符不相等或到达边界</p><p>由于$WKAHPM$比较懒,所以就不贴代码了。</p><p>暴力的缺点：</p><ul><li>1.需要分类讨论</li><li>2.枚举了很多没用的子串</li></ul><p>这时候我们就需要再加入<del>亿</del>一点优化。</p><h4 id="2-Manacher的初始化"><a href="#2-Manacher的初始化" class="headerlink" title="2.Manacher的初始化"></a>2.Manacher的初始化</h4><blockquote><p>暴力的缺点——需要分类讨论</p></blockquote><p>如何解决这个问题？一种作法是在每个字符之间再加入一个分隔字符（<strong>当然这个字符不能存在在原本的字符串中</strong>），举个栗子,比如字符串$ababac$：</p><div class="table-container"><table><thead><tr><th></th><th>a</th><th></th><th>b</th><th></th><th>a</th><th></th><th>b</th><th></th><th>a</th><th></th><th>c</th><th></th></tr></thead><tbody><tr><td>#</td><td>a</td><td>#</td><td>b</td><td>#</td><td>a</td><td>#</td><td>b</td><td>#</td><td>a</td><td>#</td><td>c</td><td>#</td></tr></tbody></table></div><p>这个方法有效地避免了分类讨论，容易发现我们插入了$N+1$个#号，字符串的长度变为$2N+1$，为奇数，<del>是不是很神奇呢</del></p><p>为了防止越界情况，我们在开头和结尾再加入一个字符，比如$@$，这部分的代码可以这么写</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">news</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">s_new += <span class="string">"@#"</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; s.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">s_new += s[i];</span><br><span class="line">s_new += <span class="string">'#'</span>; </span><br><span class="line">&#125;</span><br><span class="line">s_new += <span class="string">'@'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="3-Manacher的原理"><a href="#3-Manacher的原理" class="headerlink" title="3.Manacher的原理"></a>3.Manacher的原理</h4><p> 定义$p[i]$表示以$i$为对称中心能扩展的<strong>最大回文子串半径</strong>，即左/右边界到对称中心的距离。</p><p>$Manacher$的算法思想就是快速求出$p$数组。</p><p>我们来看看$p$数组与答案的关系(这里省略@)</p><div class="table-container"><table><thead><tr><th>s</th><th>#</th><th>a</th><th>#</th><th>b</th><th>#</th><th>a</th><th>#</th><th>b</th><th>#</th><th>a</th><th>#</th><th>c</th><th>#</th></tr></thead><tbody><tr><td><strong>ans</strong></td><td>0</td><td>1</td><td>0</td><td>3</td><td>0</td><td>5</td><td>0</td><td>3</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td><strong>p</strong></td><td>1</td><td>2</td><td>1</td><td>4</td><td>1</td><td>6</td><td>1</td><td>4</td><td>1</td><td>2</td><td>1</td><td>2</td><td>1</td></tr></tbody></table></div><p>显然有$ans[i]=p[i]-1$</p><p>证明：</p><p>设回文子串$s$原来的长度为$len$，对称中心为$i$；</p><p>则$s$插入字符后的长度变为$2\times len+1$；</p><p>此时$p[i]=(2\times len+1+1)/2=len+1$,所以$p[i]-1$即为答案</p><p>所以求出$p[i]$就可以求出答案</p><h4 id="4-Manacher的实现"><a href="#4-Manacher的实现" class="headerlink" title="4.Manacher的实现"></a>4.Manacher的实现</h4><p>$Manacher$的实现用到了回文子串的一个性质——对称性</p><p>设$mr$为之前找到的回文子串的最右边，$mid$为该回文子串的对称中心。</p><p>假设当前枚举到第$i$位，因为枚举过$mid$了，所以显然有$i&gt;mid$，接下来需要分类讨论两种情况：</p><p>为了方便讨论，设$j$为$i$以$mid$为对称中心的对称点，$s_{i}$是以$i$为对称中心的回文子串，$s_{j}$是以$j$为对称中心的回文子串</p><h5 id="1-i-lt-mr"><a href="#1-i-lt-mr" class="headerlink" title="(1)i &lt; mr"></a>(1)i &lt; mr</h5><p>这时候我们又能分2种情况</p><ul><li>1 $s_{i}$的右边界不大于$mr$</li></ul><p>如图</p><p><img src="https://i.loli.net/2019/11/15/fROsdocQh2aIuX8.png" alt="TIM截图20191115112913.png"></p><p>由对称性知，此时$p[i]=p[j]$，当$s_{i}$的右边界在$mr$上时，$s_{i}$可向外拓展</p><ul><li>2 $s_{i}$的右边界大于$mr$</li></ul><p>如图</p><p><img src="https://i.loli.net/2019/11/15/aoX7wxyB9RrE4md.png" alt="TIM截图20191115132136.png"></p><p>这时我们只能确定α段是具有对称性的，此时$p[i]=mr-i$</p><h5 id="2-i-gt-mr"><a href="#2-i-gt-mr" class="headerlink" title="(2) i &gt;= mr"></a>(2) i &gt;= mr</h5><p>此时我们无法通过对称性得到$p[i]$，所以$p[i]=1$</p><p>代码实现如下：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> mx=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> maxn=<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">int</span> id=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s_new.size();i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(i&lt;mx)</span><br><span class="line">  ans[i]=min(ans[<span class="number">2</span>*id-i],mx-i);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  ans[i]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(s_new[i-ans[i]]==s_new[i+ans[i]]) ans[i]++;</span><br><span class="line"><span class="keyword">if</span>(mx&lt;i+ans[i])</span><br><span class="line">&#123;</span><br><span class="line">id=i;</span><br><span class="line">mx=i+ans[i];</span><br><span class="line">&#125;</span><br><span class="line">maxn=max(maxn,ans[i]<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> maxn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="5-例题"><a href="#5-例题" class="headerlink" title="5.例题"></a>5.例题</h4><p><a href="https://www.luogu.org/problem/P5018" target="_blank" rel="noopener">洛谷P5018对称二叉树</a></p><p>这题可以用$Manacher$来解决。</p><p>可以先用中序遍历对每个节点编号，利用$a$和$size$数组存放每个节点的权值和以这个节点为根节点的二叉树的节点数，对每个数组进行$Manacher$，将先后两次的以第$i$个点为对称中心的最大回文子串半径存放在$p1[i],p2[i]$中。</p><p>另外本题不需要初始化，$Manacher$初始化的原因是可能存在偶数长度的回文子串，但在对称二叉树中不可能存在偶数长度的回文子串，因为在对称二叉树中，除根节点以外每一个左儿子都有一个右儿子与之对应，所以节点数为奇数个。</p><p>求出$p1,p2$后，枚举编号$1$~$N$，判断以$i$为根节点的二叉树是否为对称二叉树，如果是则对$ans$和$size[i]$取$max$，对称二叉树需要满足两个条件：</p><ul><li><p>1 权值对称</p></li><li><p>2 结构对称</p></li></ul><p>体现在程序中就是$p1[i] \times 2 - 1 &gt;= size[i]$并且$p2[i] \times 2 - 1 == size[i]$</p><p>首先解释一下为什么是$p1[i] \times 2 - 1$而不是$p1[i]-1$</p><p>$p1[i] \times 2 - 1$是因为之前的$Manacher$我们没有进行初始化，所以此时的$p1[i]$要乘2</p><p>接着解释一下为什么是$p1[i] \times 2 - 1 &gt;= size[i]$</p><p>如图</p><p><img src="https://i.loli.net/2019/11/15/myUHdKNTeh6Ltbr.png" alt="TIM截图20191115154337.png"></p><p>如果写成$p1[i] \times 2 - 1 == size[i]$的话，则对于编号为$5$的节点，$p1[5] \ times 2 - 1 =5$,而$size[5]=3$，所以当节点权值相等时，可能出现$p1[i] \times 2 - 1 &gt; size[i]$的情况。</p><h4 id="6-结语"><a href="#6-结语" class="headerlink" title="6.结语"></a>6.结语</h4><p>明天就是$CSP$了，大家调整好心态，多背背模板，基本上$t1t2$过了$t3t4$打一下暴力就省一了，祝各位$RP++$(<del>这不是毒奶</del>)</p><p>愿<img src="https://i.loli.net/2019/11/15/2ucSPiy8Qrl3WHz.png" alt="TIM截图20191115171839.png">降临到你身边</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;浅谈Manacher算法在OI中的应用——by-WKAHPM&quot;&gt;&lt;a href=&quot;#浅谈Manacher算法在OI中的应用——by-WKAHPM&quot; class=&quot;headerlink&quot; title=&quot;浅谈Manacher算法在OI中的应用——by WKAHPM&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://zyx02.github.io/blog/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Manacher" scheme="http://zyx02.github.io/blog/tags/Manacher/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈OI中的骗分技巧——by WKAHPM</title>
@@ -86,9 +111,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="动态规划（dp）" scheme="http://zyx02.github.io/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
     
@@ -206,9 +231,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
@@ -242,9 +267,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
@@ -281,9 +306,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
@@ -325,9 +350,9 @@
     
       <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="模拟" scheme="http://zyx02.github.io/blog/tags/%E6%A8%A1%E6%8B%9F/"/>
     
@@ -385,9 +410,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
@@ -420,9 +445,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
@@ -459,9 +484,9 @@
     
       <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="模拟" scheme="http://zyx02.github.io/blog/tags/%E6%A8%A1%E6%8B%9F/"/>
     
@@ -494,9 +519,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="动态规划（dp）" scheme="http://zyx02.github.io/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
     
@@ -527,9 +552,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
       <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
       <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
     
@@ -617,41 +642,6 @@
     
     
       <category term="python" scheme="http://zyx02.github.io/blog/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>题解 CF102A 【Clothes】</title>
-    <link href="http://zyx02.github.io/blog/2019/03/27/%E9%A2%98%E8%A7%A3-CF102A-%E3%80%90Clothes%E3%80%91/"/>
-    <id>http://zyx02.github.io/blog/2019/03/27/题解-CF102A-【Clothes】/</id>
-    <published>2019-03-27T12:51:31.000Z</published>
-    <updated>2019-06-25T14:25:04.508Z</updated>
-    
-    <content type="html"><![CDATA[<p>本萌新来介绍一种$dfs$思路：</p><ul><li><p>1 如果件数已经$=$3，那么判断，如果符合条件，则更新答案</p></li><li><p>2 如果件数$&lt;$3，那么枚举$1$~$n$,如果该件衣服没被取过，则标记为已取并$dfs$下一件</p></li></ul><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,money[<span class="number">110</span>],minx=INT_MAX;</span><br><span class="line"><span class="keyword">bool</span> p[<span class="number">110</span>][<span class="number">110</span>],f,use[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> s[<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">comp</span><span class="params">()</span><span class="comment">//判断是否符合条件</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(p[s[<span class="number">1</span>]][s[<span class="number">2</span>]] <span class="keyword">and</span> p[s[<span class="number">1</span>]][s[<span class="number">3</span>]] <span class="keyword">and</span> p[s[<span class="number">2</span>]][s[<span class="number">3</span>]]) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> t,<span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(t&gt;<span class="number">3</span>)<span class="comment">//件数&gt;3判断</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(comp())</span><br><span class="line">    &#123;</span><br><span class="line">    f=<span class="number">1</span>;<span class="comment">//标记为有方案</span></span><br><span class="line">    minx=min(minx,sum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(!use[i])<span class="comment">//该件衣服没被取过</span></span><br><span class="line">&#123;</span><br><span class="line">s[t]=i;<span class="comment">//保存答案编号用于之后判断</span></span><br><span class="line">use[i]=<span class="number">1</span>;<span class="comment">//标记为已取</span></span><br><span class="line">dfs(t+<span class="number">1</span>,sum+money[i]);</span><br><span class="line">use[i]=<span class="number">0</span>;<span class="comment">//回溯</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;money[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">    p[x][y]=<span class="number">1</span>;<span class="comment">//建有向图</span></span><br><span class="line">    p[y][x]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">    dfs(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(f) <span class="built_in">cout</span>&lt;&lt;minx;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"-1"</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本萌新来介绍一种$dfs$思路：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1 如果件数已经$=$3，那么判断，如果符合条件，则更新答案&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2 如果件数$&amp;lt;$3，那么枚举$1$~$n$,如果该件衣服没被取过，则标记为已取并$dfs$下一件&lt;/p&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
-    
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
-      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
-    
-      <category term="深度优先搜索（dfs）" scheme="http://zyx02.github.io/blog/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88dfs%EF%BC%89/"/>
     
   </entry>
   
