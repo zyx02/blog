@@ -41,7 +41,7 @@
   <entry>
     <title><![CDATA[倍增LCA学习笔记]]></title>
     <url>%2Fblog%2F2019%2F10%2F06%2F%E5%80%8D%E5%A2%9ELCA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[1.什么是LCA LCA（Least Common Ancestors），即最近公共祖先，是指在有根树中，找出某两个结点u和v最近的公共祖先。——百度百科 这么说可能不直观，我们通过一张图来理解一下 （图片来源百度百科） 在这棵树中，点$3$和点$6$的最近公共祖先是$2$，因为3的祖先是{1,2}，6的祖先是{4,2,1}。它们的公共祖先是{2,1}，而其中深度最大的是$2$ 2.怎么求LCA1.朴素算法了解了$LCA$的定义，不难得出一种暴力算法，即对于$u,v$两个点，我们让它们不断地一步一步往上跳，直到第一次相遇。 算法时间复杂度：$O(N)$ 2.倍增算法既然一步一步跳太慢，我们可以考虑设计一种倍增算法，让它一次跳$2^{0},2^{1},···.2^{n}$次方步。 算法流程：定义$fa[i][j]$为第$i$个点跳$2^{j}$步后达到的点，$deep[i]$为第$i$个点的深度。 1.建树，计算深度，预处理$fa[i][0]$这一部分可以用$dfs$实现 12345678910void dfs(int t , int father) //t表示当前点编号，father表示它的父亲结点编号&#123; deep[t] = deep[father] + 1;//深度是父亲深度+1 fa[t][0] = father;//t跳一步正好到father for(int i = head[t]; i ; i = edge[i].Next)//链式前向星 &#123; if(edge[i].to != father)//避免出现死循环 dfs(edge[i].to , t); &#125;&#125; 2.预处理$fa[i][j]$因为$2^{j}=2^{j-1}+2^{j-1}$，所以我们可以得到转移方程 $fa[i][j]=fa[fa[i][j-1]][j-1]$ 即先跳$2^{j-1}$到达$fa[i][j-1]$,再跳$2^{j-1}$步到达$fa[fa[i][j-1][j-1]]$ Code 12345678910void prework()&#123; for(int j = 1; j &lt;= 20; j ++)//为了保险开到2^20，一般超过2^20的数据都会超时了 &#123; for(int i = 1; i &lt;= n; i ++) &#123; fa[i][j] = fa[fa[i][j - 1]][j - 1]; &#125; &#125;&#125; 3.求$LCA$假设求$x,y$的$LCA$ 为了方便讨论，假设$deep[x]&gt;deep[y]$，即$x$的深度大于$y$的深度 先让$x$跳到与$y$同一深度，代码如下 1for(int i = 20; i &gt;= 0; i --) if(deep[fa[x][i]] &gt;= deep[y]) x = fa[x][i];//只要x还比y深，就跳，否则不跳 如果这时候如果$x$已经等于$y$了，直接输出即可。 到达同一深度后，我们开始让$x,y$一起跳，注意这里我们要跳到它们$LCA$的下一层，否则求出来的可能比答案来的深度小。 还是看最开始的例子，$3,6$,调整至同一高度后为$3,4$，如果不是跳到$LCA$的下一层的话，它们可能跳到$1$。 代码如下 12for(int i = 20; i &gt;= 0; i --) if(fa[x][i] != fa[y][i]) x = fa[x][i] , y = fa[y][i];//如果它们跳2^i后不相等，那么肯定不是LCA的上面，所以跳 最后的答案就是$f[x][0]$了 完整代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include&lt;bits/stdc++.h&gt;using namespace std;int n , m , s , cnt;int deep[500100];int fa[500010][31];struct G&#123; int to , Next;&#125;edge[1000010];int head[500010];void add(int from , int to)//建边&#123; edge[++ cnt].Next = head[from]; edge[cnt].to = to; head[from] = cnt;&#125;void dfs(int t , int father)//预处理深度&#123; deep[t] = deep[father] + 1; fa[t][0] = father; for(int i = head[t]; i ; i = edge[i].Next) &#123; if(edge[i].to != father) dfs(edge[i].to , t); &#125;&#125;void prework()//预处理fa数组&#123; for(int j = 1; j &lt;= 20; j ++) &#123; for(int i = 1; i &lt;= n; i ++) &#123; fa[i][j] = fa[fa[i][j - 1]][j - 1]; &#125; &#125;&#125;int query(int x , int y)//求LCA&#123; if(deep[x] &lt; deep[y]) swap(x , y);//令x的深度大于y的深度 for(int i = 20; i &gt;= 0; i --) if(deep[fa[x][i]] &gt;= deep[y]) x = fa[x][i];//让x,y跳到同一深度 for(int i = 20; i &gt;= 0; i --) if(fa[x][i] != fa[y][i]) x = fa[x][i] , y = fa[y][i];//让x,y一起跳 if(x == y) return x; else return fa[x][0];&#125;int main()&#123;// ios::sync_with_stdio(false); scanf("%d%d%d" , &amp;n , &amp;m , &amp;s); for(int i = 1; i &lt;= n - 1; i ++) &#123; int x , y; scanf("%d%d" , &amp;x , &amp;y); add(y , x); add(x , y); &#125; dfs(s , 0); prework(); for(int i = 1; i &lt;= m; i ++) &#123; int a , b; scanf("%d%d" , &amp;a , &amp;b); printf("%d\n" , query(a , b)); &#125; return 0;&#125; 时间复杂度$O(logn)$ 4.一些思考为什么求LCA中$j$要从大到小枚举。 举个例子，比如跳9步，如果按从小到大枚举是$1+2+4+8$,而$9 \ne1+2+4+8$,还需要回去重新找，而从大到小的话直接求出$9=8+1$ 5.例题P3379 【模板】最近公共祖先（LCA）]]></content>
+    <content type="text"><![CDATA[1.什么是LCA LCA（Least Common Ancestors），即最近公共祖先，是指在有根树中，找出某两个结点u和v最近的公共祖先。——百度百科 这么说可能不直观，我们通过一张图来理解一下 （图片来源百度百科） 在这棵树中，点$3$和点$6$的最近公共祖先是$2$，因为3的祖先是{1,2}，6的祖先是{4,2,1}。它们的公共祖先是{2,1}，而其中深度最大的是$2$ 2.怎么求LCA1.朴素算法了解了$LCA$的定义，不难得出一种暴力算法，即对于$u,v$两个点，我们让它们不断地一步一步往上跳，直到第一次相遇。 算法时间复杂度：$O(N)$ 2.倍增算法既然一步一步跳太慢，我们可以考虑设计一种倍增算法，让它一次跳$2^{0},2^{1},···.2^{n}$次方步。 算法流程：定义$fa[i][j]$为第$i$个点跳$2^{j}$步后达到的点，$deep[i]$为第$i$个点的深度。 1.建树，计算深度，预处理$fa[i][0]$这一部分可以用$dfs$实现 12345678910void dfs(int t , int father) //t表示当前点编号，father表示它的父亲结点编号&#123; deep[t] = deep[father] + 1;//深度是父亲深度+1 fa[t][0] = father;//t跳一步正好到father for(int i = head[t]; i ; i = edge[i].Next)//链式前向星 &#123; if(edge[i].to != father)//避免出现死循环 dfs(edge[i].to , t); &#125;&#125; 2.预处理$fa[i][j]$因为$2^{j}=2^{j-1}+2^{j-1}$，所以我们可以得到转移方程 $fa[i][j]=fa[fa[i][j-1]][j-1]$ 即先跳$2^{j-1}$到达$fa[i][j-1]$,再跳$2^{j-1}$步到达$fa[fa[i][j-1][j-1]]$ Code 12345678910void prework()&#123; for(int j = 1; j &lt;= 20; j ++)//为了保险开到2^20，一般超过2^20的数据都会超时了 &#123; for(int i = 1; i &lt;= n; i ++) &#123; fa[i][j] = fa[fa[i][j - 1]][j - 1]; &#125; &#125;&#125; 3.求$LCA$假设求$x,y$的$LCA$ 为了方便讨论，假设$deep[x]&gt;deep[y]$，即$x$的深度大于$y$的深度 先让$x$跳到与$y$同一深度，代码如下 1for(int i = 20; i &gt;= 0; i --) if(deep[fa[x][i]] &gt;= deep[y]) x = fa[x][i];//只要x还比y深，就跳，否则不跳 如果这时候如果$x$已经等于$y$了，直接输出即可。 到达同一深度后，我们开始让$x,y$一起跳，注意这里我们要跳到的是它们$LCA$的下一层（因为我们跳到的是满足$x$和$y$不相等的最浅的一层，而它们的上层即为$LCA$）。 还是看最开始的例子，$3,6$,调整至同一高度后为$3,4$，，循环过后$x$和$y$的值并没有改变，因为我们跳到的是$LCA$的下一层。 代码如下 12for(int i = 20; i &gt;= 0; i --) if(fa[x][i] != fa[y][i]) x = fa[x][i] , y = fa[y][i];//如果它们跳2^i后不相等，那么肯定不是LCA的上面，所以跳 最后的答案就是$f[x][0]$了 完整代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include&lt;bits/stdc++.h&gt;using namespace std;int n , m , s , cnt;int deep[500100];int fa[500010][31];struct G&#123; int to , Next;&#125;edge[1000010];int head[500010];void add(int from , int to)//建边&#123; edge[++ cnt].Next = head[from]; edge[cnt].to = to; head[from] = cnt;&#125;void dfs(int t , int father)//预处理深度&#123; deep[t] = deep[father] + 1; fa[t][0] = father; for(int i = head[t]; i ; i = edge[i].Next) &#123; if(edge[i].to != father) dfs(edge[i].to , t); &#125;&#125;void prework()//预处理fa数组&#123; for(int j = 1; j &lt;= 20; j ++) &#123; for(int i = 1; i &lt;= n; i ++) &#123; fa[i][j] = fa[fa[i][j - 1]][j - 1]; &#125; &#125;&#125;int query(int x , int y)//求LCA&#123; if(deep[x] &lt; deep[y]) swap(x , y);//令x的深度大于y的深度 for(int i = 20; i &gt;= 0; i --) if(deep[fa[x][i]] &gt;= deep[y]) x = fa[x][i];//让x,y跳到同一深度 for(int i = 20; i &gt;= 0; i --) if(fa[x][i] != fa[y][i]) x = fa[x][i] , y = fa[y][i];//让x,y一起跳 if(x == y) return x; else return fa[x][0];&#125;int main()&#123;// ios::sync_with_stdio(false); scanf("%d%d%d" , &amp;n , &amp;m , &amp;s); for(int i = 1; i &lt;= n - 1; i ++) &#123; int x , y; scanf("%d%d" , &amp;x , &amp;y); add(y , x); add(x , y); &#125; dfs(s , 0); prework(); for(int i = 1; i &lt;= m; i ++) &#123; int a , b; scanf("%d%d" , &amp;a , &amp;b); printf("%d\n" , query(a , b)); &#125; return 0;&#125; 时间复杂度$O(logn)$ 4.一些思考为什么求LCA中$j$要从大到小枚举。 这个和天平称重时从大到小放砝码有点类似，举个例子，比如跳9步，如果按从小到大枚举是$1+2+4+8$,而$9 \ne1+2+4+8$,还需要回去重新找，而从大到小的话直接求出$9=8+1$ 5.例题P3379 【模板】最近公共祖先（LCA） 泉州市信息技术基地校OJ 密室逃脱]]></content>
       <tags>
         <tag>C++</tag>
         <tag>学习笔记</tag>
@@ -114,8 +114,8 @@
         <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -159,8 +159,8 @@
         <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -193,8 +193,8 @@
     <content type="text"><![CDATA[1.什么是set 和 set的好处$set$的翻译为集合，是一个内部自动有序且不含重复元素(即满足集合的互异性)的$STL$容器，其内部采用“红黑树”实现。 什么是集合？点这 $set$的好处在于自动完成去重和按升序排序 2.举个栗子比如这题 1.普通作法看到数据范围这么水肯定想到用桶排 Code12345678910111213141516171819#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int b[1001],n,i,j,m=0,x; memset(b,0,sizeof(b)); cin&gt;&gt;n; for(i=1;i&lt;=n;i++) &#123; cin&gt;&gt;x; if(b[x]==0) m++; b[x]++; &#125; cout&lt;&lt;m&lt;&lt;endl; for(i=0;i&lt;=1000;i++) if(b[i]&gt;0) cout&lt;&lt;i&lt;&lt;" "; cout&lt;&lt;endl; return 0;&#125; 2.set如果你会了$set$，这道题就可以这么打 Code1234567891011121314151617181920#include&lt;bits/stdc++.h&gt;using namespace std;int n;set&lt;int&gt; st;int main()&#123; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++) &#123; int x; scanf("%d",&amp;x); st.insert(x); &#125; printf("%d\n",st.size()); for(set&lt;int&gt;::iterator it= st.begin(); it!=st.end(); it++) &#123; printf("%d ",*it); &#125; return 0;&#125; 如果数据范围大了话，明显不能用桶排解决，这时候$set$的好处就可以体现出来。 领会了$set$的好处之后，接下来让我们了解 3.set的定义使用$set$之前，必须添加$set$头文件，即1#include&lt;set&gt; 也可以打好我们的$bits/stdc++.h$ 同时必须要有 1using namespace std; 定义一个$set$的方法： 1set&lt;typename&gt; name; 其中$typename$为任何基本类型或者容器，$name$为这个集合的名字 同时$set$也支持定义数组，如: 1set&lt;typename&gt; name[MAXN] 即定义了$MAXN$个$set$容器 4.set的访问一大坑点是$set$只能通过迭代器访问 1.定义一个迭代器1set&lt;typename&gt;::iterator it; 即定义一个名为$it$的迭代器 2.通过迭代器访问注意事项： 1 $set$不支持类似*$(it+i)$的访问 2 $set$也不支持$it&lt;name.end()$这种访问 我们需要使用*$it$来访问$set$中的元素 5.set的常用函数1.insert()1.作用$insert()$用来插入一个数到$set$中，并自动排序+去重 2.时间复杂度$O(log_{2}n)$ 3.用法例如，以下一段代码输出$1$ $2$ $3 $ 123456for(int i=3;i&gt;=1;i--) a.insert(i);a.insert(1);for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 2.begin()和end()1.作用分别用来获取$set$容器的首地址和尾地址 用法跟其他$STL$容器一样这里不再赘述 3.size()1.作用用于获取$set$容器中元素的个数 2.时间复杂度$O(1)$ 3.用法例如，以下一段代码输出$3$ 123for(int i=3;i&gt;=1;i--) a.insert(i);a.insert(1);cout&lt;&lt;a.size(); 4.clear()1.作用用于清空$set$容器中的所有元素 2.时间复杂度$O(n)$ ($n$为$set$中的元素个数) 3.用法例如，以下一段代码输出$1$ 1234for(int i=3;i&gt;=1;i--) a.insert(i);a.clear();a.insert(1);cout&lt;&lt;a.size(); 5.erase()1.作用可以用来删除单个元素也可以用来删除一段区间的元素 1.删除单个元素 1.时间复杂度$O(1)$ (使用迭代器) $O(log_{2}n)$ (使用欲删除元素的值) 2.用法1.$erase(it)$ $it$为欲删除的元素的迭代器 例如，以下一段代码输出$2$ $3$ 123456for(int i=3;i&gt;=1;i--) a.insert(i);a.erase(a.begin());for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 2.$erase(value)$ $value$为欲删除元素的值 例如以下一段代码输出$1$ $3$ 123456for(int i=3;i&gt;=1;i--) a.insert(i);a.erase(2);for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 2.删除一个区间的元素 1.时间复杂度$O(right-left)$ $(左闭右开区间[left,right))$ 2.用法$erase(left,right)$用来删除左闭右开区间[$left$,$right$)之间的元素 例如，以下一段代码输出$1$ 1234567for(int i=5;i&gt;=1;i--) a.insert(i);set&lt;int&gt;::iterator it=a.find(2);a.erase(it,a.end());for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" ";&#125; 6.find()1.作用返回元素在$set$中的迭代器 2.时间复杂度$O(log_{2}n)$ ($n$为$set$中的元素个数) 3.用法例如，以下一段代码输出$2$ 12for(int i=5;i&gt;=1;i--) a.insert(i);cout&lt;&lt;*a.find(2); 6.推荐例题 1 洛谷P1059 明明的随机数 之后还会继续放上]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>set</tag>
         <tag>学习笔记</tag>
+        <tag>set</tag>
       </tags>
   </entry>
   <entry>
@@ -258,8 +258,8 @@
         <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -301,8 +301,8 @@
         <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -339,8 +339,8 @@
         <tag>C++</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>CodeForces</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
