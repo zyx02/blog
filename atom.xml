@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://zyx02.github.io/blog/"/>
-  <updated>2020-02-09T01:01:18.761Z</updated>
+  <updated>2020-02-09T01:06:27.531Z</updated>
   <id>http://zyx02.github.io/blog/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="http://zyx02.github.io/blog/2020/02/09/%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8A%9F%E8%83%BD%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     <id>http://zyx02.github.io/blog/2020/02/09/群机器人功能更新日志/</id>
     <published>2020-02-09T01:00:44.000Z</published>
-    <updated>2020-02-09T01:01:18.761Z</updated>
+    <updated>2020-02-09T01:06:27.531Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="date-2020-02-09"><a href="#date-2020-02-09" class="headerlink" title="date:2020/02/09"></a>date:2020/02/09</h1><p>$update$</p><ul><li>1 <a href="https://cqp.cc/t/45660" target="_blank" rel="noopener">萌化自定义插件</a></li></ul><p>简介：自动回复+一系列的拓展功能</p><p>命令：</p><p>@聊天</p><p>输入“疫情信息”可查看全国疫情信息，前面加上地区可查看地区疫情信息</p><p>输入“一言”可随机获取一句一言</p><p>输入“写诗”+标题可以写一首诗</p><ul><li>2 <a href="https://cqp.cc/t/27710" target="_blank" rel="noopener">[天枢]群管家</a></li></ul><p>简介：群管</p><p>命令：</p><p>自动进群欢迎、刷屏检测，还有一些功能没有开启</p><ul><li>3 <a href="https://cqp.cc/t/38548" target="_blank" rel="noopener">哔哩哔哩-up直播推送/视频下载/动漫聚合</a></li></ul><p>简介：哔哩哔哩助手</p><p>命令：</p><p>订阅列表 - 查看你订阅的up</p><p>订阅＋UID/名称 - UP新视频与直播推送</p><p>取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>群订阅列表 - 查看本群订阅的订阅的up</p><p>群订阅＋UID/名称 - UP新视频与直播推送，机器人会在群内提醒</p><p>群取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>新番 - 查看今天更新的新番</p><p>番剧列表 - 查看目前B站在连载的动画(此功能强制私聊回复)</p><p>追番列表 - 查看你订阅的番剧和番剧ID</p><p>追番＋番剧ID/名称 - 更新前一段时间，机器人会私聊提醒</p><p>取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>群追番列表 - 查看本群订阅的番剧和番剧ID</p><p>群追番＋番剧ID/名称 - 更新前一段时间，机器人会在群内提醒</p><p>群取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>av＋B站AV号- 查获取视频封面和相关信息</p><p>online - 看看大家大家都在看啥</p><p>追番转移＋自己的哔哩哔哩uid/自己的哔哩哔哩昵称 - 转移自己哔哩哔哩的追番列表到机器人</p><p>随便看看 - 看看我们推荐了啥~</p><ul><li>4 <a href="https://cqp.cc/t/39049" target="_blank" rel="noopener">番剧截图查询</a></li></ul><p>简介：识别番剧</p><p>命令：</p><p>发送#查询番剧+图片</p><p>或者先发送#查询番剧 查询，再发送图片</p><ul><li>5 <a href="https://cqp.cc/t/41799" target="_blank" rel="noopener">二次元图片查询</a></li></ul><p>简介：识别图片</p><p>命令：</p><p>发送#识图+图片</p><p>或者先发送#识图 查询，再发送图片</p><ul><li>6 <a href="https://cqp.cc/t/23073" target="_blank" rel="noopener">小i机器人</a></li></ul><p>简介：小i机器人</p><p>命令：</p><p>@聊天</p><ul><li>7 <a href="https://cqp.cc/t/43315" target="_blank" rel="noopener">随机动漫图片</a></li></ul><p>简介：随机图片</p><p>命令：</p><p>随机图片</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="date-2020-02-09"><a href="#date-2020-02-09" class="headerlink" title="date:2020/02/09"></a>date:2020/02/09</h1><p>$update$</p><h2 id="1-萌化自定义插件"><a href="#1-萌化自定义插件" class="headerlink" title="1 萌化自定义插件"></a>1 <a href="https://cqp.cc/t/45660" target="_blank" rel="noopener">萌化自定义插件</a></h2><p>简介：自动回复+一系列的拓展功能</p><p>命令：</p><p>@聊天</p><p>输入“疫情信息”可查看全国疫情信息，前面加上地区可查看地区疫情信息</p><p>输入“一言”可随机获取一句一言</p><p>输入“写诗”+标题可以写一首诗</p><h2 id="2-天枢-群管家"><a href="#2-天枢-群管家" class="headerlink" title="2 [天枢]群管家"></a>2 <a href="https://cqp.cc/t/27710" target="_blank" rel="noopener">[天枢]群管家</a></h2><p>简介：群管</p><p>命令：</p><p>自动进群欢迎、刷屏检测，还有一些功能没有开启</p><h2 id="3-哔哩哔哩-up直播推送-视频下载-动漫聚合"><a href="#3-哔哩哔哩-up直播推送-视频下载-动漫聚合" class="headerlink" title="3 哔哩哔哩-up直播推送/视频下载/动漫聚合"></a>3 <a href="https://cqp.cc/t/38548" target="_blank" rel="noopener">哔哩哔哩-up直播推送/视频下载/动漫聚合</a></h2><p>简介：哔哩哔哩助手</p><p>命令：</p><p>订阅列表 - 查看你订阅的up</p><p>订阅＋UID/名称 - UP新视频与直播推送</p><p>取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>群订阅列表 - 查看本群订阅的订阅的up</p><p>群订阅＋UID/名称 - UP新视频与直播推送，机器人会在群内提醒</p><p>群取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>新番 - 查看今天更新的新番</p><p>番剧列表 - 查看目前B站在连载的动画(此功能强制私聊回复)</p><p>追番列表 - 查看你订阅的番剧和番剧ID</p><p>追番＋番剧ID/名称 - 更新前一段时间，机器人会私聊提醒</p><p>取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>群追番列表 - 查看本群订阅的番剧和番剧ID</p><p>群追番＋番剧ID/名称 - 更新前一段时间，机器人会在群内提醒</p><p>群取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>av＋B站AV号- 查获取视频封面和相关信息</p><p>online - 看看大家大家都在看啥</p><p>追番转移＋自己的哔哩哔哩uid/自己的哔哩哔哩昵称 - 转移自己哔哩哔哩的追番列表到机器人</p><p>随便看看 - 看看我们推荐了啥~</p><h2 id="4-番剧截图查询"><a href="#4-番剧截图查询" class="headerlink" title="4 番剧截图查询"></a>4 <a href="https://cqp.cc/t/39049" target="_blank" rel="noopener">番剧截图查询</a></h2><p>简介：识别番剧</p><p>命令：</p><p>发送#查询番剧+图片</p><p>或者先发送#查询番剧 查询，再发送图片</p><h2 id="5-二次元图片查询"><a href="#5-二次元图片查询" class="headerlink" title="5 二次元图片查询"></a>5 <a href="https://cqp.cc/t/41799" target="_blank" rel="noopener">二次元图片查询</a></h2><p>简介：识别图片</p><p>命令：</p><p>发送#识图+图片</p><p>或者先发送#识图 查询，再发送图片</p><h2 id="6-小i机器人"><a href="#6-小i机器人" class="headerlink" title="6 小i机器人"></a>6 <a href="https://cqp.cc/t/23073" target="_blank" rel="noopener">小i机器人</a></h2><p>简介：小i机器人</p><p>命令：</p><p>@聊天</p><h2 id="7-随机动漫图片"><a href="#7-随机动漫图片" class="headerlink" title="7 随机动漫图片"></a>7 <a href="https://cqp.cc/t/43315" target="_blank" rel="noopener">随机动漫图片</a></h2><p>简介：随机图片</p><p>命令：</p><p>随机图片</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h1 id=&quot;date-2020-02-09&quot;&gt;&lt;a href=&quot;#date-2020-02-09&quot; class=&quot;headerlink&quot; title=&quot;date:2020/02/09&quot;&gt;&lt;/a&gt;date:2020/02/09&lt;/h1&gt;&lt;p&gt;$update$&lt;/p&gt;
-&lt;ul&gt;
-
+&lt;h2 i
       
     
     </summary>
