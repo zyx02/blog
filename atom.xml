@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://zyx02.github.io/blog/"/>
-  <updated>2020-02-09T05:29:08.675Z</updated>
+  <updated>2020-04-08T15:37:40.947Z</updated>
   <id>http://zyx02.github.io/blog/</id>
   
   <author>
@@ -17,20 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>群机器人功能更新日志</title>
-    <link href="http://zyx02.github.io/blog/2020/02/09/%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8A%9F%E8%83%BD%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
-    <id>http://zyx02.github.io/blog/2020/02/09/群机器人功能更新日志/</id>
+    <title>群机器人食用指北</title>
+    <link href="http://zyx02.github.io/blog/2020/02/09/%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/"/>
+    <id>http://zyx02.github.io/blog/2020/02/09/群机器人食用指北/</id>
     <published>2020-02-09T01:00:44.000Z</published>
-    <updated>2020-02-09T05:29:08.675Z</updated>
+    <updated>2020-04-08T15:37:40.947Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="date-2020-02-09"><a href="#date-2020-02-09" class="headerlink" title="date:2020/02/09"></a>date:2020/02/09</h1><p>$update$</p><h2 id="1-萌化自定义插件"><a href="#1-萌化自定义插件" class="headerlink" title="1 萌化自定义插件"></a>1 <a href="https://cqp.cc/t/45660" target="_blank" rel="noopener">萌化自定义插件</a></h2><p>简介：自动回复+一系列的拓展功能</p><p>命令：</p><p>@聊天</p><p>输入“疫情信息”可查看全国疫情信息，前面加上地区可查看地区疫情信息</p><p>输入“一言”可随机获取一句一言</p><p>输入“写诗”+标题可以写一首诗</p><h2 id="2-天枢-群管家"><a href="#2-天枢-群管家" class="headerlink" title="2 [天枢]群管家"></a>2 <a href="https://cqp.cc/t/27710" target="_blank" rel="noopener">[天枢]群管家</a></h2><p>简介：群管</p><p>命令：</p><p>自动进群欢迎、刷屏检测，还有一些功能没有开启</p><h2 id="3-哔哩哔哩-up直播推送-视频下载-动漫聚合"><a href="#3-哔哩哔哩-up直播推送-视频下载-动漫聚合" class="headerlink" title="3 哔哩哔哩-up直播推送/视频下载/动漫聚合"></a>3 <a href="https://cqp.cc/t/38548" target="_blank" rel="noopener">哔哩哔哩-up直播推送/视频下载/动漫聚合</a></h2><p>简介：哔哩哔哩助手</p><p>命令：</p><p>订阅列表 - 查看你订阅的up</p><p>订阅＋UID/名称 - UP新视频与直播推送</p><p>取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>群订阅列表 - 查看本群订阅的订阅的up</p><p>群订阅＋UID/名称 - UP新视频与直播推送，机器人会在群内提醒</p><p>群取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>新番 - 查看今天更新的新番</p><p>番剧列表 - 查看目前B站在连载的动画(此功能强制私聊回复)</p><p>追番列表 - 查看你订阅的番剧和番剧ID</p><p>追番＋番剧ID/名称 - 更新前一段时间，机器人会私聊提醒</p><p>取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>群追番列表 - 查看本群订阅的番剧和番剧ID</p><p>群追番＋番剧ID/名称 - 更新前一段时间，机器人会在群内提醒</p><p>群取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>av＋B站AV号- 查获取视频封面和相关信息</p><p>online - 看看大家大家都在看啥</p><p>追番转移＋自己的哔哩哔哩uid/自己的哔哩哔哩昵称 - 转移自己哔哩哔哩的追番列表到机器人</p><p>随便看看 - 看看我们推荐了啥~</p><h2 id="4-番剧截图查询"><a href="#4-番剧截图查询" class="headerlink" title="4 番剧截图查询"></a>4 <a href="https://cqp.cc/t/39049" target="_blank" rel="noopener">番剧截图查询</a></h2><p>简介：识别番剧</p><p>命令：</p><p>发送#查询番剧+图片</p><p>或者先发送#查询番剧 查询，再发送图片</p><h2 id="5-二次元图片查询"><a href="#5-二次元图片查询" class="headerlink" title="5 二次元图片查询"></a>5 <a href="https://cqp.cc/t/41799" target="_blank" rel="noopener">二次元图片查询</a></h2><p>简介：识别图片</p><p>命令：</p><p>发送#识图+图片</p><p>或者先发送#识图 查询，再发送图片</p><h2 id="6-小i机器人"><a href="#6-小i机器人" class="headerlink" title="6 小i机器人"></a>6 <a href="https://cqp.cc/t/23073" target="_blank" rel="noopener">小i机器人</a></h2><p>简介：小i机器人</p><p>命令：</p><p>@聊天</p><h2 id="7-随机动漫图片"><a href="#7-随机动漫图片" class="headerlink" title="7 随机动漫图片"></a>7 <a href="https://cqp.cc/t/43315" target="_blank" rel="noopener">随机动漫图片</a></h2><p>简介：随机图片</p><p>命令：</p><p>随机图片</p><h2 id="8-百度百科"><a href="#8-百度百科" class="headerlink" title="8 百度百科"></a>8 <a href="https://cqp.cc/t/46011" target="_blank" rel="noopener">百度百科</a></h2><p>简介：百度百科</p><p>命令：</p><p>百科 XX(中间有空格)</p><h2 id="9-Lxnet复读机"><a href="#9-Lxnet复读机" class="headerlink" title="9 Lxnet复读机"></a>9 <a href="https://cqp.cc/t/46471" target="_blank" rel="noopener">Lxnet复读机</a></h2><p>简介：复读机</p><p>命令：</p><p>随机复读，随机打断复读</p><h2 id="10-少看点二次元吧"><a href="#10-少看点二次元吧" class="headerlink" title="10 少看点二次元吧"></a>10 <a href="https://cqp.cc/t/43528" target="_blank" rel="noopener">少看点二次元吧</a></h2><p>简介：社区最好的动漫类插件</p><p>命令：</p><p>番剧搜索</p><p>搜索图片</p><p>识别动漫截图</p><p>热门图片</p><p>随机图片</p><p>p站排行榜</p><p>p站搜索</p><p>b站排行榜</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Last-updated-2020-04-08"><a href="#Last-updated-2020-04-08" class="headerlink" title="Last updated:2020/04/08"></a>Last updated:2020/04/08</h2><h3 id="1-萌化自定义插件"><a href="#1-萌化自定义插件" class="headerlink" title="1 萌化自定义插件"></a>1 <a href="https://cqp.cc/t/45660" target="_blank" rel="noopener">萌化自定义插件</a></h3><p>简介：自动回复+一系列的拓展功能</p><p>命令：</p><ul><li>1 翻译(语种) xxx 例：翻译英语你好</li><li>2 群号 返回群号</li><li>3 我 返回自己的QQ名</li><li>4 聊天系统（已禁用）</li></ul><h3 id="2-哔哩哔哩-up直播推送-视频下载-动漫聚合"><a href="#2-哔哩哔哩-up直播推送-视频下载-动漫聚合" class="headerlink" title="2 哔哩哔哩-up直播推送/视频下载/动漫聚合"></a>2 <a href="https://cqp.cc/t/38548" target="_blank" rel="noopener">哔哩哔哩-up直播推送/视频下载/动漫聚合</a></h3><p>简介：哔哩哔哩助手</p><p>命令：</p><p>订阅列表 - 查看你订阅的up</p><p>订阅＋UID/名称 - UP新视频与直播推送</p><p>取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>群订阅列表 - 查看本群订阅的订阅的up</p><p>群订阅＋UID/名称 - UP新视频与直播推送，机器人会在群内提醒</p><p>群取消订阅＋UID/名称 - 取消订阅，机器人不再提醒</p><p>新番 - 查看今天更新的新番</p><p>番剧列表 - 查看目前B站在连载的动画(此功能强制私聊回复)</p><p>追番列表 - 查看你订阅的番剧和番剧ID</p><p>追番＋番剧ID/名称 - 更新前一段时间，机器人会私聊提醒</p><p>取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>群追番列表 - 查看本群订阅的番剧和番剧ID</p><p>群追番＋番剧ID/名称 - 更新前一段时间，机器人会在群内提醒</p><p>群取消追番＋番剧ID/名称 - 取消订阅，机器人不再提醒</p><p>av＋B站AV号- 查获取视频封面和相关信息</p><p>online - 看看大家大家都在看啥</p><p>追番转移＋自己的哔哩哔哩uid/自己的哔哩哔哩昵称 - 转移自己哔哩哔哩的追番列表到机器人</p><p>随便看看 - 看看我们推荐了啥~</p><h3 id="3-少看点二次元吧"><a href="#3-少看点二次元吧" class="headerlink" title="3 少看点二次元吧"></a>3 <a href="https://cqp.cc/t/48173" target="_blank" rel="noopener">少看点二次元吧</a></h3><p>简介：一款ACG插件</p><p>命令：</p><ul><li>1 番剧搜索+番剧名称 例：番剧搜索 某科学的超电磁炮（没给链接时多试几次）</li><li>2 搜索图片+图片 返回原图地址</li><li>3 搜索番剧+图片 返回图片中番剧</li><li>4 随机图片（需pro版）</li><li>5 b站排行榜</li><li>6 AV/BV自动解析</li></ul><h3 id="4-爱音乐"><a href="#4-爱音乐" class="headerlink" title="4 爱音乐"></a>4 <a href="https://cqp.cc/t/14698" target="_blank" rel="noopener">爱音乐</a></h3><p>简介：返回音乐</p><p>命令：</p><ul><li>1 我想听XX/来首XX/点歌XX</li></ul><h3 id="5-小i机器人"><a href="#5-小i机器人" class="headerlink" title="5 小i机器人"></a>5 <a href="https://cqp.cc/t/23073" target="_blank" rel="noopener">小i机器人</a></h3><p>简介：小i机器人</p><p>命令：</p><p>@聊天</p><p><img src="https://i.loli.net/2020/04/08/WUGaJdB2vR6wAfN.png" alt></p><h3 id="6-百科搜索"><a href="#6-百科搜索" class="headerlink" title="6 百科搜索"></a>6 <a href="https://cqp.cc/t/47263" target="_blank" rel="noopener">百科搜索</a></h3><p>简介：百科</p><p>命令：</p><ul><li>1 萌娘百科 XX</li></ul><h3 id="7百度百科"><a href="#7百度百科" class="headerlink" title="7百度百科"></a>7<a href="https://cqp.cc/t/48434" target="_blank" rel="noopener">百度百科</a></h3><p>简介：百度百科</p><p>命令：</p><ul><li>1 百科 XX</li></ul><h3 id="8撤回查看"><a href="#8撤回查看" class="headerlink" title="8撤回查看"></a>8<a href="https://cqp.cc/t/47702" target="_blank" rel="noopener">撤回查看</a></h3><p>简介：防撤回</p><p>命令：</p><ul><li>1 查看撤回+X，查看从这条信息往上数的第X条信息，机器人信息不计入条数（需管理员权限）</li></ul><h3 id="9狼人杀"><a href="#9狼人杀" class="headerlink" title="9狼人杀"></a>9<a href="https://cqp.cc/t/34095" target="_blank" rel="noopener">狼人杀</a></h3><p>简介：狼人杀（仅能开启一个群）</p><p>命令：</p><ul><li><p>1 狼人杀加入</p></li><li><p>2 狼人杀退出</p></li></ul><h3 id="10Lxnet复读机"><a href="#10Lxnet复读机" class="headerlink" title="10Lxnet复读机"></a>10<a href="https://cqp.cc/t/46471" target="_blank" rel="noopener">Lxnet复读机</a></h3><p>简介：复读（随机复读，3条信息复读）</p><p>命令：</p><p>无</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;date-2020-02-09&quot;&gt;&lt;a href=&quot;#date-2020-02-09&quot; class=&quot;headerlink&quot; title=&quot;date:2020/02/09&quot;&gt;&lt;/a&gt;date:2020/02/09&lt;/h1&gt;&lt;p&gt;$update$&lt;/p&gt;
-&lt;h2 i
+        &lt;h2 id=&quot;Last-updated-2020-04-08&quot;&gt;&lt;a href=&quot;#Last-updated-2020-04-08&quot; class=&quot;headerlink&quot; title=&quot;Last updated:2020/04/08&quot;&gt;&lt;/a&gt;Last updated:2020
       
     
     </summary>
@@ -431,9 +430,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
       <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
       <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
@@ -565,9 +564,9 @@
     
       <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
     
-      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
       <category term="字符串" scheme="http://zyx02.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
     
       <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
