@@ -1,7 +1,7 @@
 <h1 id="Live2D-Widget"><a href="#Live2D-Widget" class="headerlink" title="Live2D Widget"></a>Live2D Widget</h1><h2 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h2><p>在网页中添加Live2D看板娘。<br>Add Live2D widget to web page.</p>
 <p><strong>警告：不支持IE。</strong><br><strong>WARNING: DO NOT SUPPORT IE.</strong></p>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>在<a href="https://zhangshuqiao.org">米米的博客</a>的左下角可查看效果。需要使用支持WebGL的现代浏览器浏览。</p>
-<p><img src="screenshot-1.png" alt><br><img src="screenshot-2.png" alt><br><img src="screenshot-3.png" alt></p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>在<a href="https://zhangshuqiao.org" target="_blank" rel="noopener">米米的博客</a>的左下角可查看效果。需要使用支持WebGL的现代浏览器浏览。</p>
+<p><img src="screenshot-1.png" alt=""><br><img src="screenshot-2.png" alt=""><br><img src="screenshot-3.png" alt=""></p>
 <h2 id="依赖-Dependencies"><a href="#依赖-Dependencies" class="headerlink" title="依赖 Dependencies"></a>依赖 Dependencies</h2><p>本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，例如在<code>&lt;head&gt;</code>中加入：<br>jQuery and font-awesome is required for this plugin. You can add this to <code>&lt;head&gt;</code>:</p>
 <pre><code class="lang-xml">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;/&gt;
@@ -27,15 +27,15 @@ git clone https://github.com/stevenjoezhang/live2d-widget.git
 </code></pre>
 <p>就可以加载了。</p>
 <p><code>waifu-tips.json</code>中包含了触发条件（selector，选择器）和触发时显示的文字（text）。源文件是对Hexo的NexT主题有效的，为了适用于你自己的网页，也需要自行修改，或增加新内容。<br><strong>警告：作者不对<code>waifu-tips.json</code>和<code>waifu-tips.js</code>中的内容负责，请自行确保它们是合适的。</strong><br>如果有任何疑问，欢迎提交ISSUE。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>Live2D官方网站：<br><a href="https://www.live2d.com/en/">https://www.live2d.com/en/</a><br><a href="https://live2d.github.io">https://live2d.github.io</a></p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>Live2D官方网站：<br><a href="https://www.live2d.com/en/" target="_blank" rel="noopener">https://www.live2d.com/en/</a><br><a href="https://live2d.github.io" target="_blank" rel="noopener">https://live2d.github.io</a></p>
 <p>可以在官方网站下载SDK，包含更多的功能，也可以自行编译。具体操作是：</p>
 <ul>
 <li>点击Cubism SDK for Web，下载相关文件</li>
 <li>解压并进入目录，执行<code>npm install</code></li>
 <li>执行<code>npm run build-sample</code></li>
 </ul>
-<h2 id="鸣谢-Credits"><a href="#鸣谢-Credits" class="headerlink" title="鸣谢 Credits"></a>鸣谢 Credits</h2><p>代码自这篇博文魔改而来：<br><a href="https://www.fghrsh.net/post/123.html">https://www.fghrsh.net/post/123.html</a><br>相比初始的版本，这个Repo增加了一些功能，并优化了提示展现机制。</p>
-<p>更多内容可以参考：<br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br><a href="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/">https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/</a></p>
-<p>还可以自行搭建后端api，并增加模型（需要修改的内容比较多，此处不再赘述）：<br><a href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a><br><a href="https://github.com/xiaoski/live2d_models_collection">https://github.com/xiaoski/live2d_models_collection</a></p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Released under the GNU General Public License v3<br><a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
-<h2 id="更新-Update"><a href="#更新-Update" class="headerlink" title="更新 Update"></a>更新 Update</h2><p>2018年10月31日，由fghrsh提供的原API停用，请更新至新地址。参考文章：<br><a href="https://www.fghrsh.net/post/170.html">https://www.fghrsh.net/post/170.html</a></p>
+<h2 id="鸣谢-Credits"><a href="#鸣谢-Credits" class="headerlink" title="鸣谢 Credits"></a>鸣谢 Credits</h2><p>代码自这篇博文魔改而来：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">https://www.fghrsh.net/post/123.html</a><br>相比初始的版本，这个Repo增加了一些功能，并优化了提示展现机制。</p>
+<p>更多内容可以参考：<br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br><a href="https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/" target="_blank" rel="noopener">https://zhangshuqiao.org/2018-07/在网页中添加Live2D看板娘/</a></p>
+<p>还可以自行搭建后端api，并增加模型（需要修改的内容比较多，此处不再赘述）：<br><a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a><br><a href="https://github.com/xiaoski/live2d_models_collection" target="_blank" rel="noopener">https://github.com/xiaoski/live2d_models_collection</a></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Released under the GNU General Public License v3<br><a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
+<h2 id="更新-Update"><a href="#更新-Update" class="headerlink" title="更新 Update"></a>更新 Update</h2><p>2018年10月31日，由fghrsh提供的原API停用，请更新至新地址。参考文章：<br><a href="https://www.fghrsh.net/post/170.html" target="_blank" rel="noopener">https://www.fghrsh.net/post/170.html</a></p>
