@@ -115,23 +115,23 @@
   daovoice('update');
   </script>
 
-  <meta name="description" content="题目描述 题解首先考虑如何求树上的任意个点连通的边集的总长度的最小值 可以对树上的点进行一次$dfs$求出它们的$dfs$序，将所求点按$dfs$序排序后相邻两点（包括头尾）的距离之和即为使这些点连通的边集的总长度的最小值的两倍 如图（蓝色为各点$dfs$序） _LI.jpg) 假设我们要让$1,2,3,5$连通 按$dfs$序排序后得到$1,3,5,2$ $dis(1,3)+dis(3,5)+d">
+  <meta name="description" content="题目描述 题解首先考虑如何求树上的任意个点连通的边集的总长度的最小值 可以对树上的点进行一次$dfs$求出它们的$dfs$序，将所求点按$dfs$序排序后相邻两点（包括头尾）的距离之和即为使这些点连通的边集的总长度的最小值的两倍 如图（蓝色为各点$dfs$序）  假设我们要让$1,2,3,5$连通 按$dfs$序排序后得到$1,3,5,2$ $dis(1,3)+dis(3,5)+dis(5,2)+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[题解]1912异象石">
 <meta property="og:url" content="http://zyx02.github.io/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/index.html">
 <meta property="og:site_name" content="WKAHPM的博客">
-<meta property="og:description" content="题目描述 题解首先考虑如何求树上的任意个点连通的边集的总长度的最小值 可以对树上的点进行一次$dfs$求出它们的$dfs$序，将所求点按$dfs$序排序后相邻两点（包括头尾）的距离之和即为使这些点连通的边集的总长度的最小值的两倍 如图（蓝色为各点$dfs$序） _LI.jpg) 假设我们要让$1,2,3,5$连通 按$dfs$序排序后得到$1,3,5,2$ $dis(1,3)+dis(3,5)+d">
+<meta property="og:description" content="题目描述 题解首先考虑如何求树上的任意个点连通的边集的总长度的最小值 可以对树上的点进行一次$dfs$求出它们的$dfs$序，将所求点按$dfs$序排序后相邻两点（包括头尾）的距离之和即为使这些点连通的边集的总长度的最小值的两倍 如图（蓝色为各点$dfs$序）  假设我们要让$1,2,3,5$连通 按$dfs$序排序后得到$1,3,5,2$ $dis(1,3)+dis(3,5)+dis(5,2)+">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zyx02.github.io/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/problem.png">
-<meta property="og:image" content="http://zyx02.github.io/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/Inkedgraph%20(1">
+<meta property="og:image" content="https://i.loli.net/2021/08/26/8aBWAbkZDgnevFd.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/26/4k912bcTBXaDINu.jpg">
 <meta property="article:published_time" content="2021-08-25T15:12:33.000Z">
-<meta property="article:modified_time" content="2021-08-25T15:35:44.664Z">
+<meta property="article:modified_time" content="2021-08-25T16:23:01.524Z">
 <meta property="article:author" content="WKAHPM">
+<meta property="article:tag" content="set">
 <meta property="article:tag" content="LCA,最近公共祖先">
 <meta property="article:tag" content="dfs序">
-<meta property="article:tag" content="set">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zyx02.github.io/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/problem.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/26/8aBWAbkZDgnevFd.png">
 
 
   
@@ -466,12 +466,24 @@ WIDGET = {FID: 'DmIm0qllkB'}
                 
               
 
-              <time title="创建时间：2021-08-25 23:12:33 / 修改时间：23:35:44" itemprop="dateCreated datePublished" datetime="2021-08-25T23:12:33+08:00">2021-08-25</time>
+              <time title="创建时间：2021-08-25 23:12:33" itemprop="dateCreated datePublished" datetime="2021-08-25T23:12:33+08:00">2021-08-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-08-26 00:23:01" itemprop="dateModified" datetime="2021-08-26T00:23:01+08:00">2021-08-26</time>
               
             
           </span>
@@ -550,11 +562,11 @@ WIDGET = {FID: 'DmIm0qllkB'}
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><img src="题解-1912异象石/problem.png" alt=""></p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><img src="https://i.loli.net/2021/08/26/8aBWAbkZDgnevFd.png" alt="problem.png"></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>首先考虑如何求树上的任意个点连通的边集的总长度的最小值</p>
 <p>可以对树上的点进行一次$dfs$求出它们的$dfs$序，将所求点按$dfs$序排序后相邻两点（包括头尾）的距离之和即为使这些点连通的边集的总长度的最小值的两倍</p>
 <p>如图（蓝色为各点$dfs$序）</p>
-<p><img src="题解-1912异象石/Inkedgraph%20(1" alt="">_LI.jpg)</p>
+<p><img src="https://i.loli.net/2021/08/26/4k912bcTBXaDINu.jpg" alt="Inkedgraph _1__LI.jpg"></p>
 <p>假设我们要让$1,2,3,5$连通</p>
 <p>按$dfs$序排序后得到$1,3,5,2$</p>
 <p>$dis(1,3)+dis(3,5)+dis(5,2)+dis(2,1)=5+15+11+1$</p>
@@ -584,11 +596,11 @@ WIDGET = {FID: 'DmIm0qllkB'}
       
         <div class="post-tags">
           
+            <a href="/blog/tags/set/" rel="tag"><i class="fa fa-tag"></i> set</a>
+          
             <a href="/blog/tags/LCA-%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" rel="tag"><i class="fa fa-tag"></i> LCA,最近公共祖先</a>
           
             <a href="/blog/tags/dfs%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> dfs序</a>
-          
-            <a href="/blog/tags/set/" rel="tag"><i class="fa fa-tag"></i> set</a>
           
         </div>
       
@@ -604,7 +616,7 @@ WIDGET = {FID: 'DmIm0qllkB'}
   <p><span>本文标题:</span><a href="/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/">[题解]1912异象石</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 WKAHPM 的个人博客">WKAHPM</a></p>
   <p><span>发布时间:</span>2021年08月25日 - 23:12</p>
-  <p><span>最后更新:</span>2021年08月25日 - 23:35</p>
+  <p><span>最后更新:</span>2021年08月26日 - 00:23</p>
   <p><span>原始链接:</span><a href="/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/" title="[题解]1912异象石">http://zyx02.github.io/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zyx02.github.io/blog/2021/08/25/%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3/"  aria-label="复制成功！"></i></span>
   </p>
