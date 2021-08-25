@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[题解]1037道路重建]]></title>
+    <url>%2Fblog%2F2021%2F08%2F25%2F%E9%A2%98%E8%A7%A3-1037%E9%81%93%E8%B7%AF%E9%87%8D%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[题目描述 题解记$dp[i][j]$表示在以$i$为根的子树中保留$j$个牛棚需要摧毁的最小道路数，显然$dp[i][1]$等于与$i$相连的道路数。 对于所有的$v \in son_{i}$,我们可以枚举在$v$的子树中保留的牛棚树进行转移。方程: $dp_{k,j} = min(dp[k][j - l] + dp[v][l] - 2)$ $(1&lt;=j&lt;=p,1&lt;=l&lt;j)$ 注意转移中的$-2$,这是由于在$dp[k][j-l]和dp[v][l]$中，$k与v$的连边都被计算了一次，实际上这条边需要保留 Code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include &lt;bits/stdc++.h&gt;using namespace std;int read()&#123; int sum = 0 , f = 1; char c = getchar(); while(c &lt; '0' or c &gt; '9') &#123; if(c == '-') f = -1; c = getchar(); &#125; while(c &gt;= '0' and c &lt;= '9') &#123; sum = sum * 10 + c - '0'; c = getchar(); &#125; return sum * f;&#125;int n , p;int Size[160] , Son[160][160] , tot[160];int dp[160][160];int dfs(int k)&#123; tot[k] = 1; for(int i = 1; i &lt;= Size[k]; i ++) &#123; tot[k] += dfs(Son[k][i]); &#125; return tot[k];&#125;void Dfs(int k , int fa)&#123; if(Son[k][1] == 0) &#123; return; &#125; for(int i = 1; i &lt;= Size[k]; i ++) &#123; int v = Son[k][i]; if(v == fa) continue; Dfs(v , k); for(int j = p; j &gt;= 1; j --) &#123; for(int l = 1; l &lt; j; l ++) &#123; dp[k][j] = min(dp[k][j] , dp[k][j - l] + dp[v][l] - 2); &#125; &#125; &#125;&#125; int main()&#123; n = read() , p = read(); for(int i = 1; i &lt; n; i ++) &#123; int u = read() , v = read(); Son[u][++ Size[u]] = v; Son[v][++ Size[v]] = u; &#125; memset(dp , 0x3f , sizeof(dp)); for(int i = 1; i &lt;= n; i ++) dp[i][1] = Size[i]; Dfs(1 , 0); int ans = INT_MAX; for(int i = 1; i &lt;= n; i ++) ans = min(ans , dp[i][p]); printf("%d\n" , ans); return 0;&#125;]]></content>
+      <tags>
+        <tag>树形动态规划</tag>
+        <tag>背包</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[题解P1005Divisible]]></title>
     <url>%2Fblog%2F2021%2F08%2F25%2F%E9%A2%98%E8%A7%A3P1005Divisible%2F</url>
     <content type="text"><![CDATA[题目大意设$F[i]$为斐波那契数列的第$i$项，其中$F[1]=1,F[2]=1$。 给定$a,b$，判断$F[a]$能否整除$F[b]$,如果能输出1，否则输出0 思路先说结论，若$n|m$,则$F[n]|F[m]$。 证明： 首先 $F[n] = F[n-1]+F[n-2]$ $F[n] = 2F[n-2]+F[n-3]$ $F[n] = 3F[n-3] + 2F[n-4]$ …… $F[n] = F[m]F[n-m+1]+F[m-1][n-m]$ 先证$gcd(F[n],F[m])=F[gcd(n,m)]$ $gcd(F[n],F[m])$ = $gcd(F[m]F[n-m+1]+F[m-1]F[n-m],F[m])$ = $gcd(F[n-m],F[m])$ 一直递推下去可以得到$gcd(F[n],F[m])=F[gcd(n,m)]$ 再回到本题 若$F[n]|F[m]$,有$gcd(F[n],F[m])=F[n]$ 所以$gcd(n,m)=n$ 所以$n|m$]]></content>
@@ -209,8 +218,8 @@
         <tag>C++</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>动态规划（dp）</tag>
         <tag>背包</tag>
+        <tag>动态规划（dp）</tag>
       </tags>
   </entry>
   <entry>
@@ -401,9 +410,9 @@
         <tag>C++</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
+        <tag>背包</tag>
         <tag>深度优先搜索（dfs）</tag>
         <tag>动态规划（dp）</tag>
-        <tag>背包</tag>
       </tags>
   </entry>
   <entry>
@@ -422,8 +431,8 @@
     <url>%2Fblog%2F2019%2F03%2F10%2FNOIP2018%E6%B8%B8%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[我才不会告诉你这篇文章是用来测验$LaTeX$的 $Day $ $0$告别期中考，来到福州，与机房的各位大佬去试了一下机，回来的时候互奶着哪位大佬要 $AK$了， 哪位大佬要省一了，晚上不务正业地玩着狼人杀，似乎忘记了此行的目的。 $Day$ $1$早上很早地就起来看一本通了，在宾馆颓了一早上，到了要比赛时才匆匆忙忙地背了一下$DP$ 方程 进入考场，先用了5$min$看了一遍所有题目，发现不简单 先看了一下$T1$，一道十分简单的字符串模拟，花了5$min$就敲完了，怕有坑不知道看了几遍题面。。。 看了一下$T2$，题目叙述比较长，于是先去看了看$T3$，想了一会儿觉得是贪心，于是打了个贪心调了挺久的，把两个小样例过了再去看大样例，发现答案比正确答案少了很多，于是想了很多方法，最终还是没想出来。 又回过头去看$T2$,理解完题面意思后发现是一道模拟，下意识写了个$O(N^{2})$的暴力，发现大数据会卡，脑抽没发现$O(n)$的算法，又去调了一会$T3$ 最后30$min$去看了一眼$T4$，发现是二叉树，但是没学过，直接输出0想骗些分 比赛结束，预计得分:$100+80+30+10=220$ 赛后去你谷测了一下民间数据，发现得分比预期的高，$100+80+30+20=230$ 用老师的数据也测了一下，$210$也还好 最后CCF的官方成绩出来了，发现才$100+80+10+4=194$分，原来$T3$的正解是$DP$，发现如果在原来的贪心上再改动一点应该可以过更多的数据的 最后$FJ$的分数线出来了——$195$，$194$的我当场崩溃$QwQ$ 第一次参加$NOIP$就带着差一分省一的遗憾结束了，不过反正我才初一还有很多机会对吧]]></content>
       <tags>
-        <tag>游记</tag>
         <tag>NOIP</tag>
+        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
