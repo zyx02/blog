@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://zyx02.github.io/blog/"/>
-  <updated>2021-08-28T15:54:09.167Z</updated>
+  <updated>2021-10-23T12:56:14.496Z</updated>
   <id>http://zyx02.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSP-S2021游记</title>
+    <link href="http://zyx02.github.io/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://zyx02.github.io/blog/2021/10/23/CSP-S2021游记/</id>
+    <published>2021-10-23T12:24:09.000Z</published>
+    <updated>2021-10-23T12:56:14.496Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Day-7"><a href="#Day-7" class="headerlink" title="$Day-7$"></a>$Day-7$</h2><p>停课了，好耶！<del>可以颓七天了</del></p><p>今天打$lmki$神仙出的模拟赛，被其他学校神仙暴虐/kk</p><p>$100+40+40+0$我是什么fw</p><p>$t1$博弈论，还是挺好看出结论的。</p><p>$t2$有点懵，随便打了一个搜索和一个部分分。考完后才知道这是$lmki$自己出的题目，正解是$dp$+树状数组优化，还用了2种方法解释/se（lmki真是tql!!!)</p><p>$t3$带修莫队，没学过/kk</p><p>$t4$期望，。。。。</p><h2 id="Day-6-Day-5"><a href="#Day-6-Day-5" class="headerlink" title="$Day-6$~$Day-5$"></a>$Day-6$~$Day-5$</h2><p>改题，学莫队</p><h2 id="Day-4"><a href="#Day-4" class="headerlink" title="$Day-4$"></a>$Day-4$</h2><p>模拟赛。</p><p>$100+20+100+0$ $rk2$</p><h2 id="Day-3"><a href="#Day-3" class="headerlink" title="$Day-3$"></a>$Day-3$</h2><p>改题，刷题</p><h2 id="Day-2"><a href="#Day-2" class="headerlink" title="$Day-2$"></a>$Day-2$</h2><p>模拟赛</p><p>$70+10+40+20$ $rk5$</p><p>$t1$数组开小$100-&gt;70$</p><p>$t2$忘记初始白色判断$100-&gt;10$</p><p>$t3$重边忘了取min$60-&gt;40$</p><p>三道题挂了$140$我是什么垃圾</p><h2 id="Day-1"><a href="#Day-1" class="headerlink" title="$Day-1$"></a>$Day-1$</h2><p>最后一天了，不想打题，跟机房神仙打了一上午雀魂</p><p>下午继续颓废</p><p>晚上$phigros$更新了！迅速推完第七章</p><p>感觉明天要挂/kk</p><p>考前$lmki$奶了一手四题思维题，但愿不是</p><h2 id="Day-0"><a href="#Day-0" class="headerlink" title="$Day-0$"></a>$Day-0$</h2><p>早上睡到11点才醒，晚上颓太晚了/baojin</p><p>整个人还有点困，下午真的要无了</p><p>今年仍然在泉州一中考，虽然每年都来但是每一次都被震撼到（</p><p>$14:29$ 草，好紧张</p><p>$14:30$开题</p><p>先看了一下编译选项，好耶，是$-O2$</p><p>第一题，廊桥分配，第一眼感觉是贪心？</p><p>第二题，括号序列，字符串？果断放弃</p><p>第三题，回文，嗯。。</p><p>第四题，交通规划，看不懂。。。</p><p>开始回去打第一题，一直在$set$和手打平衡树之间纠结，最后还是选择了$set$</p><p>先按照自己的思路写了一个，跑了第一个样例第二个样例都过了，第三个样例错了，顿时慌了。</p><p>开始看代码，发现代码好像没错，难道是思路错了？</p><p>又仔细想了一遍，构造出了几个可以hack的数据，修正了一下自己的思路，<del>好耶过了</del></p><p>然后自己造了一个大数据，居然跑这么久？</p><p>后面才发现</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lower_bound(s.begin(), s.end(), val);</span><br></pre></td></tr></table></figure><p>比</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.lower_bound(val);</span><br></pre></td></tr></table></figure><p>慢得多，改成后者就跑的飞快了（我是sb</p><p>第二题，想了一些性质，发现根本没用，看到爆搜才15分果断开下一题</p><p>第三题打了一个40分的暴力，然后就不会了。</p><p>再看一遍第四题，$k=2$部分分好像好做？码了一下最后还是放弃了。</p><p>看了一下时间还有$1.5h$，就想把$t2$爆搜打一下，结果发现自己连暴力都不会了，草。</p><p>无所事事ing….</p><p>$t2$和$t4$反复横跳ing….</p><p>最后二十分钟了，两题暴力都没打出来，我是什么fw</p><p>又去检查了一遍$t1$和$t3$，不管了，等死了。</p><p>出来跟神仙们讨论了一下，$t1$应该思路是正确的，那就放心了（</p><p>回家。</p><p>如果能进$NOIP$就再好不过了。</p><p>又要回去肝文化课了（大哭</p><p><img src="https://s3.bmp.ovh/imgs/2021/10/c9f1a3e982529234.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Day-7&quot;&gt;&lt;a href=&quot;#Day-7&quot; class=&quot;headerlink&quot; title=&quot;$Day-7$&quot;&gt;&lt;/a&gt;$Day-7$&lt;/h2&gt;&lt;p&gt;停课了，好耶！&lt;del&gt;可以颓七天了&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;今天打$lmki$神仙出的模拟赛，被其他学校
+      
+    
+    </summary>
+    
+    
+      <category term="游记" scheme="http://zyx02.github.io/blog/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+      <category term="CSP" scheme="http://zyx02.github.io/blog/tags/CSP/"/>
+    
+  </entry>
   
   <entry>
     <title>[题解]ZJOI2012灾难</title>
@@ -133,9 +159,9 @@
     </summary>
     
     
-      <category term="dfs序" scheme="http://zyx02.github.io/blog/tags/dfs%E5%BA%8F/"/>
-    
       <category term="树状数组" scheme="http://zyx02.github.io/blog/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="dfs序" scheme="http://zyx02.github.io/blog/tags/dfs%E5%BA%8F/"/>
     
   </entry>
   
@@ -183,9 +209,9 @@
     </summary>
     
     
-      <category term="LCA,最近公共祖先" scheme="http://zyx02.github.io/blog/tags/LCA-%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
-    
       <category term="set" scheme="http://zyx02.github.io/blog/tags/set/"/>
+    
+      <category term="LCA,最近公共祖先" scheme="http://zyx02.github.io/blog/tags/LCA-%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
       <category term="dfs序" scheme="http://zyx02.github.io/blog/tags/dfs%E5%BA%8F/"/>
     
@@ -510,42 +536,6 @@
     
     
       <category term="游记" scheme="http://zyx02.github.io/blog/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>题解 CF581B 【Luxurious Houses】</title>
-    <link href="http://zyx02.github.io/blog/2019/06/24/%E9%A2%98%E8%A7%A3-CF581B-%E3%80%90Luxurious-Houses%E3%80%91/"/>
-    <id>http://zyx02.github.io/blog/2019/06/24/题解-CF581B-【Luxurious-Houses】/</id>
-    <published>2019-06-24T01:56:55.000Z</published>
-    <updated>2019-06-25T14:25:15.070Z</updated>
-    
-    <content type="html"><![CDATA[<p>不难看出，题目要求的是每一个房子后面最高的房子与它的高度差$+1$，（如果比它矮输出$0$）</p><p>我们定义</p><ul><li><p>$maxn[i]$表示第$i$到第$n$个房子高度的最大值（$n$为房子数）</p></li><li><p>$h[i]$表示第$i$个房子的高度</p></li></ul><p>因为$maxn[i+1]$存放的已经是第$i+1$到第$n$个房子的最大值了，所以第$i$到第$n$个房子的最大值只要让当前房子的高度与$maxn[i+1]$进行比较即可</p><p>即$maxn[i]=max(h[i],maxn[i+1])$</p><p>代码如下</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> h[MAXN] , maxn[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; h[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">2</span>; i --)</span><br><span class="line">   maxn[i] = max(h[i] , maxn[i + <span class="number">1</span>]); <span class="comment">//预处理最大值</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i ++)</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; max(maxn[i + <span class="number">1</span>] - h[i] + <span class="number">1</span> , <span class="number">0</span>) &lt;&lt; <span class="string">" "</span>;<span class="comment">//如果没比它高要输出0！</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">0</span>;<span class="comment">//最后一个后面已经没有房子了当然是0</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;不难看出，题目要求的是每一个房子后面最高的房子与它的高度差$+1$，（如果比它矮输出$0$）&lt;/p&gt;
-&lt;p&gt;我们定义&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;$maxn[i]$表示第$i$到第$n$个房子高度的最大值（$n$为房子数）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;$h[i]$
-      
-    
-    </summary>
-    
-    
-      <category term="C++" scheme="http://zyx02.github.io/blog/tags/C/"/>
-    
-      <category term="洛谷" scheme="http://zyx02.github.io/blog/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
-      <category term="题解" scheme="http://zyx02.github.io/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-      <category term="CodeForces" scheme="http://zyx02.github.io/blog/tags/CodeForces/"/>
-    
-      <category term="动态规划（dp）" scheme="http://zyx02.github.io/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88dp%EF%BC%89/"/>
     
   </entry>
   

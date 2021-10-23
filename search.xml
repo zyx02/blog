@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSP-S2021游记]]></title>
+    <url>%2Fblog%2F2021%2F10%2F23%2FCSP-S2021%E6%B8%B8%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[$Day-7$停课了，好耶！可以颓七天了 今天打$lmki$神仙出的模拟赛，被其他学校神仙暴虐/kk $100+40+40+0$我是什么fw $t1$博弈论，还是挺好看出结论的。 $t2$有点懵，随便打了一个搜索和一个部分分。考完后才知道这是$lmki$自己出的题目，正解是$dp$+树状数组优化，还用了2种方法解释/se（lmki真是tql!!!) $t3$带修莫队，没学过/kk $t4$期望，。。。。 $Day-6$~$Day-5$改题，学莫队 $Day-4$模拟赛。 $100+20+100+0$ $rk2$ $Day-3$改题，刷题 $Day-2$模拟赛 $70+10+40+20$ $rk5$ $t1$数组开小$100-&gt;70$ $t2$忘记初始白色判断$100-&gt;10$ $t3$重边忘了取min$60-&gt;40$ 三道题挂了$140$我是什么垃圾 $Day-1$最后一天了，不想打题，跟机房神仙打了一上午雀魂 下午继续颓废 晚上$phigros$更新了！迅速推完第七章 感觉明天要挂/kk 考前$lmki$奶了一手四题思维题，但愿不是 $Day-0$早上睡到11点才醒，晚上颓太晚了/baojin 整个人还有点困，下午真的要无了 今年仍然在泉州一中考，虽然每年都来但是每一次都被震撼到（ $14:29$ 草，好紧张 $14:30$开题 先看了一下编译选项，好耶，是$-O2$ 第一题，廊桥分配，第一眼感觉是贪心？ 第二题，括号序列，字符串？果断放弃 第三题，回文，嗯。。 第四题，交通规划，看不懂。。。 开始回去打第一题，一直在$set$和手打平衡树之间纠结，最后还是选择了$set$ 先按照自己的思路写了一个，跑了第一个样例第二个样例都过了，第三个样例错了，顿时慌了。 开始看代码，发现代码好像没错，难道是思路错了？ 又仔细想了一遍，构造出了几个可以hack的数据，修正了一下自己的思路，好耶过了 然后自己造了一个大数据，居然跑这么久？ 后面才发现 1lower_bound(s.begin(), s.end(), val); 比 1s.lower_bound(val); 慢得多，改成后者就跑的飞快了（我是sb 第二题，想了一些性质，发现根本没用，看到爆搜才15分果断开下一题 第三题打了一个40分的暴力，然后就不会了。 再看一遍第四题，$k=2$部分分好像好做？码了一下最后还是放弃了。 看了一下时间还有$1.5h$，就想把$t2$爆搜打一下，结果发现自己连暴力都不会了，草。 无所事事ing…. $t2$和$t4$反复横跳ing…. 最后二十分钟了，两题暴力都没打出来，我是什么fw 又去检查了一遍$t1$和$t3$，不管了，等死了。 出来跟神仙们讨论了一下，$t1$应该思路是正确的，那就放心了（ 回家。 如果能进$NOIP$就再好不过了。 又要回去肝文化课了（大哭]]></content>
+      <tags>
+        <tag>游记</tag>
+        <tag>CSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[题解]ZJOI2012灾难]]></title>
     <url>%2Fblog%2F2021%2F08%2F28%2F%E9%A2%98%E8%A7%A3-ZJOI2012%E7%81%BE%E9%9A%BE%2F</url>
     <content type="text"><![CDATA[题目描述洛谷 题解题目中有多个生产者，考虑建一个虚点连向所有的生产者，这样保证了图连通。显然我们要按照拓扑序处理每个节点。 一个生物死亡只有当且仅当所有指向它的生物死亡，如果它的入度为$1$比较好处理，但如果大于$1$呢？ 让捕食者向被捕食者再建一条边，当遍历到一个捕食者有多条连向它的被捕食者的边时，我们可以让这个捕食者直接向它的所有被捕食者的最近公共祖先连一条边。因为它们的最近公共祖先死亡了它们会全部死亡，所以连向被捕食者的所有边与连向它们最近公共祖先的边是等价的，这样我们就保证了图成为一棵树。 如图 观察发现小强向牛和羊都有连边，牛和羊的最近公共祖先是草，这表明草死亡了牛和羊都会死亡，所以小强也会死亡。所以可以直接让小强向草连一条边。 最后只需要统计每个节点的子树大小，减去自己的$1$即可 Code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133#include &lt;bits/stdc++.h&gt;using namespace std;const int MAXN = 70010;int read()&#123; int sum = 0 , f = 1; char c = getchar(); while(c &lt; '0' or c &gt; '9') &#123; if(c == '-') f = -1; c = getchar(); &#125; while(c &gt;= '0' and c &lt;= '9') &#123; sum = sum * 10 + c - '0'; c = getchar(); &#125; return sum * f;&#125;int n , cnt , head[MAXN];int deg[MAXN] , f[30][MAXN] , depth[MAXN];int tcnt , thead[MAXN];struct G&#123; int To , Nxt;&#125;edge[MAXN * 100] , Tree[MAXN];void add(int From , int To)&#123; edge[++ cnt].Nxt = head[From]; edge[cnt].To = To; head[From] = cnt;&#125;void addTree(int From , int To)&#123; Tree[++ tcnt].Nxt = thead[From]; Tree[tcnt].To = To; thead[From] = tcnt;&#125;int Lca(int x , int y)&#123; if(depth[x] &lt; depth[y]) swap(x , y); for(int j = 20; j &gt;= 0; j --) if(depth[f[j][x]] &gt;= depth[y]) x = f[j][x]; if(x == y) return x; for(int j = 20; j &gt;= 0; j --) if(f[j][x] != f[j][y]) x = f[j][x] , y = f[j][y]; return f[0][x]; &#125;void Work(int k)&#123; for(int j = 1; j &lt;= 20; j ++) f[j][k] = f[j - 1][f[j - 1][k]];&#125;bool vis[MAXN];int q[MAXN] , fa[MAXN];void Toopsort()&#123; int Head = 1 , tail = 1; q[tail] = 0; depth[0] = 0; while(Head &lt;= tail) &#123; int k = q[Head]; vis[k] = 1; Head ++; for(int i = head[k]; i != -1; i = edge[i].Nxt) &#123; int v = edge[i].To; if(vis[v] or deg[v] == 0) continue; if(fa[v] == -1) fa[v] = k; else fa[v] = Lca(fa[v] , k); deg[v] --; if(deg[v] == 0) &#123; f[0][v] = fa[v]; depth[v] = depth[fa[v]] + 1; Work(v); addTree(fa[v] , v); q[++ tail] = v; &#125; &#125; &#125;&#125;int Size[MAXN];void Dfs(int k)&#123; Size[k] = 1; for(int i = thead[k]; i != -1; i = Tree[i].Nxt) &#123; int v = Tree[i].To; Dfs(v); Size[k] += Size[v]; &#125;&#125;int main()&#123;// freopen("catas_catas9.in" , "r" , stdin);// freopen("catas_catas9.out" , "w" , stdout); n = read(); memset(head , -1 , sizeof(head)); memset(fa , -1 , sizeof(fa)); memset(thead , -1 , sizeof(thead)); for(int i = 1; i &lt;= n; i ++) &#123; int x = read(); while(x != 0) &#123; deg[i] ++; add(i , x); add(x , i); x = read(); &#125; if(deg[i] == 0) deg[i] ++ , add(0 , i); &#125; Toopsort(); Dfs(0); for(int i = 1; i &lt;= n; i ++) &#123;// if(Size[i] == 0) cout &lt;&lt; i &lt;&lt; endl; printf("%d\n" , Size[i] - 1); &#125; return 0;&#125;]]></content>
@@ -40,8 +49,8 @@
     <url>%2Fblog%2F2021%2F08%2F27%2F%E9%A2%98%E8%A7%A3-CF383C-Propagating-tree%2F</url>
     <content type="text"><![CDATA[题目描述洛谷 CF 题解题目要求对给定的$u$节点的子树进行操作，使其$0$级节点加上$val$，$1$级节点减去$val$，$2$级节点加上$val$，以此类推。 由于对子树进行操作，考虑节点的$dfs$序，计算每个节点第一次被访问和回溯时的时间戳，则它的子树$dfs$序都在这段区间内，由此将树上修改转化为区间修改。 观察到一个节点加上或减去$val$与其深度的奇偶性有关，假定根节点深度为$1$。我们在以深度为奇数的节点的子树修改时令整个区间加上$val$，深度为偶数的节点的子树修改时令整个区间加上$-val$，输出时奇数深度的节点加上修改的值，偶数深度的节点减去修改的值即可解决。 由于题目要求区间修改单点查询，可以用树状数组解决。注意初始值不受影响。所以不需要进行初始化(注释部分)，在输出时加上初始值即可。 Code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899#include &lt;bits/stdc++.h&gt;using namespace std;const int MAXN = 2e5 + 10;int read()&#123; int sum = 0 , f = 1; char c = getchar(); while(c &lt; '0' or c &gt; '9') &#123; if(c == '-') f = -1; c = getchar(); &#125; while(c &gt;= '0' and c &lt;= '9') &#123; sum = sum * 10 + c - '0'; c = getchar(); &#125; return sum * f;&#125;int n , m;int Black[MAXN] , White[MAXN] , ti;int head[MAXN] , cnt , val[MAXN] , depth[MAXN];int tree[MAXN] , id[MAXN];struct G&#123; int To , Nxt;&#125;edge[MAXN &lt;&lt; 1];void add(int From , int To)&#123; edge[++ cnt].Nxt = head[From]; edge[cnt].To = To; head[From] = cnt;&#125;void dfs(int k , int fa)&#123; depth[k] = depth[fa] + 1; Black[k] = ++ ti; id[ti] = k; for(int i = head[k]; i; i = edge[i].Nxt) &#123; int v = edge[i].To; if(v == fa) continue; dfs(v , k); &#125; White[k] = ti;&#125;int lowbit(int x)&#123; return x &amp; -x;&#125; void Add(int pos, int w)&#123; while(pos &lt;= n) tree[pos] += w , pos += lowbit(pos);&#125;int query(int pos)&#123; int sum = 0; while(pos) sum += tree[pos] , pos -= lowbit(pos); return sum;&#125;int main()&#123; n = read() , m = read(); for(int i = 1; i &lt;= n; i ++) val[i] = read(); for(int i = 1; i &lt; n; i ++) &#123; int u = read() , v = read(); add(u , v) , add(v , u); &#125; dfs(1 , 0);// for(int i = 2; i &lt;= n; i ++)// &#123;// Add(i , val[id[i]] - val[id[i - 1]]);// &#125; while(m --) &#123; int op = read(); if(op == 1) &#123; int x = read() , val = read(); if(depth[x] % 2 == 1) Add(Black[x] , val) , Add(White[x] + 1 , -val); else Add(Black[x] , -val) , Add(White[x] + 1 , val); &#125; else &#123; int x = read(); int s = query(Black[x]); if(depth[x] % 2 == 1) printf("%d\n" , val[x] + s); else printf("%d\n" , val[x] - s); &#125; &#125; return 0;&#125;]]></content>
       <tags>
-        <tag>dfs序</tag>
         <tag>树状数组</tag>
+        <tag>dfs序</tag>
       </tags>
   </entry>
   <entry>
@@ -58,8 +67,8 @@
     <url>%2Fblog%2F2021%2F08%2F25%2F%E9%A2%98%E8%A7%A3-1912%E5%BC%82%E8%B1%A1%E7%9F%B3%2F</url>
     <content type="text"><![CDATA[题目描述 题解首先考虑如何求树上的任意个点连通的边集的总长度的最小值 可以对树上的点进行一次$dfs$求出它们的$dfs$序，将所求点按$dfs$序排序后相邻两点（包括头尾）的距离之和即为使这些点连通的边集的总长度的最小值的两倍 如图（蓝色为各点$dfs$序） 假设我们要让$1,2,3,5$连通 按$dfs$序排序后得到$1,3,5,2$ $dis(1,3)+dis(3,5)+dis(5,2)+dis(2,1)=5+15+11+1$ 观察发现每条边都被计算两次，所以结果是答案的$2$倍 有了以上结论后，我们可以得出一个算法，使用平衡树或$set$维护所有异象石的$dfs$序，每次插入一个新的异象石$k$时，查找到它在已有异象石中的前驱和后继，假设为$i,j$，更新$ans$，令其减去$dis(i,j)$并加上$dis(i,k)+dis(k,j)$。同理，删除操作则令$ans$加上$dis(i,j)$减去$dis(i,k)+dis(k,j)$ 注意特判边界 Code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188#include &lt;bits/stdc++.h&gt;using namespace std; const int MAXN = 1e5 + 10; int read()&#123; int sum = 0, f = 1; char c = getchar(); while (c &lt; '0' or c &gt; '9') &#123; if (c == '-') f = -1; c = getchar(); &#125; while (c &gt;= '0' and c &lt;= '9') &#123; sum = sum * 10 + c - '0'; c = getchar(); &#125; return sum * f;&#125; int n, m, cnt, head[MAXN];int dfn[MAXN];long long dist[MAXN], tot, f[30][MAXN], depth[MAXN];struct G&#123; int To, Nxt, Dis;&#125; edge[MAXN &lt;&lt; 1]; void add(int From, int To, int Dis)&#123; edge[++cnt].Dis = Dis; edge[cnt].Nxt = head[From]; edge[cnt].To = To; head[From] = cnt;&#125; void dfs(int k, int fa)&#123; tot++; dfn[k] = tot; f[0][k] = fa; depth[k] = depth[fa] + 1; for (int i = head[k]; i; i = edge[i].Nxt) &#123; int v = edge[i].To; if (v == fa) continue; dist[v] = dist[k] + edge[i].Dis; dfs(v, k); &#125;&#125; void prework()&#123; for (int j = 1; j &lt;= 20; j++) for (int i = 1; i &lt;= n; i++) f[j][i] = f[j - 1][f[j - 1][i]];&#125; int Lca(int x, int y)&#123; if (depth[x] &lt; depth[y]) swap(x, y); for (int j = 20; j &gt;= 0; j--) if (depth[f[j][x]] &gt;= depth[y]) x = f[j][x]; if (x == y) return x; for (int j = 20; j &gt;= 0; j--) if (f[j][x] != f[j][y]) x = f[j][x], y = f[j][y]; return f[0][x];&#125; set&lt;int&gt; s;int id[MAXN];char ch;long long ans; long long calc(int x, int y)&#123; int t = Lca(x, y); return dist[x] + dist[y] - 2 * dist[t];&#125; int main()&#123; n = read(); for (int i = 1; i &lt; n; i++) &#123; int x = read(), y = read(), z = read(); add(x, y, z), add(y, x, z); &#125; dfs(1, 0); for (int i = 1; i &lt;= n; i++) id[dfn[i]] = i; prework(); m = read(); while (m--) &#123; scanf(" "); scanf("%c", &amp;ch); if (ch == '+') &#123; int x = read(); if (s.empty()) &#123; s.insert(dfn[x]); continue; &#125; set&lt;int&gt;::iterator it = s.lower_bound(dfn[x]); if (it == s.begin()) &#123; int y = *it; set&lt;int&gt;::iterator it1 = --s.end(); int z = *it1; ans += (calc(x, id[y]) + calc(x, id[z]) - calc(id[y], id[z])); &#125; else &#123; if (it == s.end()) &#123; it--; int y = *it; int z = *s.begin(); ans += (calc(x, id[y]) + calc(x, id[z]) - calc(id[y], id[z])); &#125; else &#123; int y = *it; if (it != s.begin()) it--; int z = *it; ans += (calc(x, id[y]) + calc(x, id[z]) - calc(id[y], id[z])); &#125; &#125; s.insert(dfn[x]); &#125; if (ch == '-') &#123; int x = read(); if (s.size() == 1) &#123; s.erase(dfn[x]); continue; &#125; set&lt;int&gt;::iterator it = s.find(dfn[x]); if (it == s.begin()) &#123; it++; int y = *it; set&lt;int&gt;::iterator it1 = --s.end(); int z = *it1; ans -= (calc(x, id[y]) + calc(x, id[z]) - calc(id[y], id[z])); &#125; else &#123; set&lt;int&gt;::iterator End = s.end(); End--; if (it == End) &#123; if (it != s.begin()) it--; int y = *it; int z = *s.begin(); ans -= (calc(x, id[y]) + calc(x, id[z]) - calc(id[y], id[z])); &#125; else &#123; it++; int y = *it; it--, it--; int z = *it; ans -= (calc(x, id[y]) + calc(x, id[z]) - calc(id[y], id[z])); &#125; &#125; s.erase(dfn[x]); &#125; if (ch == '?') &#123; printf("%lld\n", ans / 2); &#125; &#125; return 0;&#125;]]></content>
       <tags>
-        <tag>LCA,最近公共祖先</tag>
         <tag>set</tag>
+        <tag>LCA,最近公共祖先</tag>
         <tag>dfs序</tag>
       </tags>
   </entry>
@@ -221,9 +230,9 @@
     <content type="text"><![CDATA[一道字符串模拟题，思路如下： 1 输入时将两个时间存储 2 将两个时间化为以分钟做单位 3 得到中间时间与第一个时间的差 4 输出 注意：当时间或分钟数$&lt;=9$时，要用$0$补齐位数 Code 123456789101112131415161718192021222324252627282930#include&lt;bits/stdc++.h&gt;using namespace std;string s1,s2; int h1,h2,m1,m2;int main()&#123; ios::sync_with_stdio(false); cin&gt;&gt;s1&gt;&gt;s2; for(int i=0;i&lt;2;i++)//将时间存储 h1+=(s1[i]-'0')*pow(10,1-i),h2+=(s2[i]-'0')*pow(10,1-i); for(int i=3;i&lt;=4;i++) m1+=(s1[i]-'0')*pow(10,4-i),m2+=(s2[i]-'0')*pow(10,4-i); int ans=((h2*60+m2)-(h1*60+m1))/2;//求得中间时间与第一个时间的差 h1+=ans/60;//加上时间差 m1+=ans%60; if(m1&gt;=60)//如果分钟&gt;=60要进位 &#123; h1++; m1%=60; &#125; if(h1&lt;=9)//输出，&lt;=9的用0补齐 cout&lt;&lt;0&lt;&lt;h1&lt;&lt;":"; else cout&lt;&lt;h1&lt;&lt;":"; if(m1&lt;=9) cout&lt;&lt;0&lt;&lt;m1; else cout&lt;&lt;m1; return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
+        <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>字符串</tag>
         <tag>模拟</tag>
         <tag>CodeForces</tag>
       </tags>
@@ -266,9 +275,9 @@
     <content type="text"><![CDATA[这题其实是一道很水的字符串模拟，不要被难度骗了 CF恶意评分又不是一两天了（雾） 注意题目中说到的 由直线或都是由曲线构成的 是指该字母的笔画（我理解题目理解了半天$qwq$） 具体思路： 1 应用$map$将由直线（或者曲线）构成的字母的映射值设为1 2 计算该字符串的所有对应的映射值之和，因为题目要求全为直线或全为曲线，所以当总和为$len$($len$为字符串长度)或$0$时，输出$YES$，否则输出$NO$ Code1234567891011121314151617181920212223242526272829#include&lt;bits/stdc++.h&gt;using namespace std;string s;map&lt;char,bool&gt; p;int main()&#123; ios::sync_with_stdio(false); p['A']=1;//打表 p['E']=1; p['F']=1; p['H']=1; p['I']=1; p['K']=1; p['L']=1; p['M']=1; p['N']=1; p['T']=1; p['V']=1; p['W']=1; p['X']=1; p['Y']=1; p['Z']=1; cin&gt;&gt;s; int sum=0; for(int i=0;i&lt;s.size();i++) sum+=p[s[i]];//统计映射值之和 if(sum==s.size() or sum==0) cout&lt;&lt;"YES";//判断 else cout&lt;&lt;"NO"; return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
+        <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>字符串</tag>
         <tag>模拟</tag>
         <tag>CodeForces</tag>
       </tags>
@@ -365,9 +374,9 @@
     <content type="text"><![CDATA[一道字符串模拟，直接暴力枚举即可Code123456789101112131415161718192021222324252627282930#include&lt;bits/stdc++.h&gt;using namespace std;string s;int main()&#123; cin &gt;&gt; s; for(int i = 0 ; i &lt; s.size(); i++) &#123; int ans = 1; char c = s[i]; for(int j = i + 1 ; j &lt; s.size(); j++) &#123; if(s[j] != c)//不一样直接退出 &#123; break; &#125; else &#123; ans++; &#125; if(ans == 7)//有七个一样的输出YES &#123; puts("YES"); return 0; &#125; &#125; &#125; puts("NO");//不危险输出NO return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
+        <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>字符串</tag>
         <tag>模拟</tag>
         <tag>CodeForces</tag>
       </tags>
@@ -408,9 +417,9 @@
     <content type="text"><![CDATA[一道字符串模拟题首先我们知道 偶数+偶数=偶数 偶数+奇数=奇数 然后我们就可以对$N$进行分类讨论： 当$N\le3$时，直接输出字符串即可 当$N=2k$ $(k\ge2)$时，可以把$N$拆分成若干个长度为2的字符串，在两个字符串之间添上-号 当$N=2k+1$ $(k\ge2)$时，可以把$N$拆分成一个长度为3的字符串和若干个长度为2的字符串，在两个字符串之间添上-号 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&lt;bits/stdc++.h&gt;using namespace std;string s;int sum;int n;int main()&#123; scanf("%d",&amp;n); cin&gt;&gt;s; if(n&lt;=3) //如果n&lt;=3，直接输出 &#123; cout&lt;&lt;s; return 0; &#125; if(n%2==0) //n为偶数则拆分成若干个长度为2的字符串 &#123; for(int i=0; i&lt;n; i++) &#123; sum++; printf("%c",s[i]); if(i==n-1) return 0; if(sum==2) &#123; printf("-"); sum=0; &#125; &#125; &#125; else //n为奇数则拆分成一个长度为3的字符串和若干个长度为2的字符串 &#123; for(int i=0; i&lt;3; i++) &#123; printf("%c",s[i]); &#125; printf("-"); for(int i=3; i&lt;n; i++) &#123; sum++; printf("%c",s[i]); if(i==n-1) return 0; if(sum==2) &#123; printf("-"); sum=0; &#125; &#125; &#125; return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
+        <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
-        <tag>字符串</tag>
         <tag>模拟</tag>
         <tag>CodeForces</tag>
       </tags>
@@ -421,10 +430,10 @@
     <content type="text"><![CDATA[如题，输出奇数位上的字母即可AC 注意字符串下标是从0开始的！ Code12345678910111213#include&lt;bits/stdc++.h&gt;using namespace std;char s[100010];int main()&#123; gets(s); for(int i=0;i&lt;strlen(s);i+=2)//输出奇数位 &#123; printf("%c",s[i]); &#125; printf("\n");//记得换行 return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
+        <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
         <tag>AtCoder</tag>
-        <tag>字符串</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -434,10 +443,10 @@
     <content type="text"><![CDATA[一道简单的字符串模拟，刷难度真给力 本蒟蒻的思路比较麻烦，但个人认为比较好理解 1 先将字符串倒序存放 2 按照规则改变字母 3 比较 Code：1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;bits/stdc++.h&gt;using namespace std;char s1[100010],s2[100010];int len;int main()&#123; cin&gt;&gt;s1; for(int i=strlen(s1)-1; i&gt;=0; i--) &#123; s2[len++]=s1[i];//倒序存放 &#125; for(int i=0; i&lt;strlen(s2); i++) &#123; switch(s2[i])//按照规则改变字母 &#123; case 'b': &#123; s2[i]='d'; break; &#125; case 'd': &#123; s2[i]='b'; break; &#125; case 'p': &#123; s2[i]='q'; break; &#125; case 'q': &#123; s2[i]='p'; break; &#125; &#125; &#125; if(strcmp(s1,s2)==0) cout&lt;&lt;"Yes"&lt;&lt;endl;//比较，注意如果两个字符串一样，strcmp返回0 else cout&lt;&lt;"No"&lt;&lt;endl;//记得换行 return 0;&#125;]]></content>
       <tags>
         <tag>C++</tag>
+        <tag>字符串</tag>
         <tag>洛谷</tag>
         <tag>题解</tag>
         <tag>AtCoder</tag>
-        <tag>字符串</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -494,8 +503,8 @@
     <url>%2Fblog%2F2019%2F03%2F10%2FNOIP2018%E6%B8%B8%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[我才不会告诉你这篇文章是用来测验$LaTeX$的 $Day $ $0$告别期中考，来到福州，与机房的各位大佬去试了一下机，回来的时候互奶着哪位大佬要 $AK$了， 哪位大佬要省一了，晚上不务正业地玩着狼人杀，似乎忘记了此行的目的。 $Day$ $1$早上很早地就起来看一本通了，在宾馆颓了一早上，到了要比赛时才匆匆忙忙地背了一下$DP$ 方程 进入考场，先用了5$min$看了一遍所有题目，发现不简单 先看了一下$T1$，一道十分简单的字符串模拟，花了5$min$就敲完了，怕有坑不知道看了几遍题面。。。 看了一下$T2$，题目叙述比较长，于是先去看了看$T3$，想了一会儿觉得是贪心，于是打了个贪心调了挺久的，把两个小样例过了再去看大样例，发现答案比正确答案少了很多，于是想了很多方法，最终还是没想出来。 又回过头去看$T2$,理解完题面意思后发现是一道模拟，下意识写了个$O(N^{2})$的暴力，发现大数据会卡，脑抽没发现$O(n)$的算法，又去调了一会$T3$ 最后30$min$去看了一眼$T4$，发现是二叉树，但是没学过，直接输出0想骗些分 比赛结束，预计得分:$100+80+30+10=220$ 赛后去你谷测了一下民间数据，发现得分比预期的高，$100+80+30+20=230$ 用老师的数据也测了一下，$210$也还好 最后CCF的官方成绩出来了，发现才$100+80+10+4=194$分，原来$T3$的正解是$DP$，发现如果在原来的贪心上再改动一点应该可以过更多的数据的 最后$FJ$的分数线出来了——$195$，$194$的我当场崩溃$QwQ$ 第一次参加$NOIP$就带着差一分省一的遗憾结束了，不过反正我才初一还有很多机会对吧]]></content>
       <tags>
-        <tag>NOIP</tag>
         <tag>游记</tag>
+        <tag>NOIP</tag>
       </tags>
   </entry>
   <entry>

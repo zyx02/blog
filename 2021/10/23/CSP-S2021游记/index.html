@@ -115,22 +115,21 @@
   daovoice('update');
   </script>
 
-  <meta name="description" content="这题的基本思想就是贪心吧 题目就是让你两两分组，使得每组能力值的差值最小 设$a_{1},a_{2},···,a_{n}$表示每个学生的能力值 且满足：$a_{1} \le a_{2} \le ··· \le a_{n}$ 则对于任意一个能力值$a_{i}$，它的最优匹配为$a_{i+1}$（$i$为奇数） 考虑到$a_{1}$，我们不取$a_{i-1}$（你想想$a_{1-1}$是什么） 假设存">
+  <meta name="description" content="$Day-7$停课了，好耶！可以颓七天了 今天打$lmki$神仙出的模拟赛，被其他学校神仙暴虐&#x2F;kk $100+40+40+0$我是什么fw $t1$博弈论，还是挺好看出结论的。 $t2$有点懵，随便打了一个搜索和一个部分分。考完后才知道这是$lmki$自己出的题目，正解是$dp$+树状数组优化，还用了2种方法解释&#x2F;se（lmki真是tql!!!) $t3$带修莫队，没学过&#x2F;kk $t4$期望，。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解 CF1092B 【Teams Forming】">
-<meta property="og:url" content="http://zyx02.github.io/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/index.html">
+<meta property="og:title" content="CSP-S2021游记">
+<meta property="og:url" content="http://zyx02.github.io/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/index.html">
 <meta property="og:site_name" content="WKAHPM的博客">
-<meta property="og:description" content="这题的基本思想就是贪心吧 题目就是让你两两分组，使得每组能力值的差值最小 设$a_{1},a_{2},···,a_{n}$表示每个学生的能力值 且满足：$a_{1} \le a_{2} \le ··· \le a_{n}$ 则对于任意一个能力值$a_{i}$，它的最优匹配为$a_{i+1}$（$i$为奇数） 考虑到$a_{1}$，我们不取$a_{i-1}$（你想想$a_{1-1}$是什么） 假设存">
+<meta property="og:description" content="$Day-7$停课了，好耶！可以颓七天了 今天打$lmki$神仙出的模拟赛，被其他学校神仙暴虐&#x2F;kk $100+40+40+0$我是什么fw $t1$博弈论，还是挺好看出结论的。 $t2$有点懵，随便打了一个搜索和一个部分分。考完后才知道这是$lmki$自己出的题目，正解是$dp$+树状数组优化，还用了2种方法解释&#x2F;se（lmki真是tql!!!) $t3$带修莫队，没学过&#x2F;kk $t4$期望，。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-04-10T14:08:21.000Z">
-<meta property="article:modified_time" content="2019-06-25T14:25:25.543Z">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2021/10/c9f1a3e982529234.jpg">
+<meta property="article:published_time" content="2021-10-23T12:24:09.000Z">
+<meta property="article:modified_time" content="2021-10-23T12:56:14.496Z">
 <meta property="article:author" content="WKAHPM">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="洛谷">
-<meta property="article:tag" content="题解">
-<meta property="article:tag" content="CodeForces">
-<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="游记">
+<meta property="article:tag" content="CSP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2021/10/c9f1a3e982529234.jpg">
 
 
   
@@ -141,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://zyx02.github.io/blog/2019/04/10/题解-CF1092B-【Teams-Forming】/"/>
+  <link rel="canonical" href="http://zyx02.github.io/blog/2021/10/23/CSP-S2021游记/"/>
 
 
 
@@ -151,7 +150,7 @@
   };
 </script>
 
-  <title>题解 CF1092B 【Teams Forming】 | WKAHPM的博客</title>
+  <title>CSP-S2021游记 | WKAHPM的博客</title>
   
 
 
@@ -422,7 +421,7 @@ WIDGET = {FID: 'DmIm0qllkB'}
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zyx02.github.io/blog/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/"/>
+    <link itemprop="mainEntityOfPage" href="http://zyx02.github.io/blog/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WKAHPM"/>
@@ -439,7 +438,7 @@ WIDGET = {FID: 'DmIm0qllkB'}
 
         
         
-          <h1 class="post-title" itemprop="name headline">题解 CF1092B 【Teams Forming】
+          <h1 class="post-title" itemprop="name headline">CSP-S2021游记
 
               
             
@@ -465,24 +464,12 @@ WIDGET = {FID: 'DmIm0qllkB'}
                 
               
 
-              <time title="创建时间：2019-04-10 22:08:21" itemprop="dateCreated datePublished" datetime="2019-04-10T22:08:21+08:00">2019-04-10</time>
+              <time title="创建时间：2021-10-23 20:24:09 / 修改时间：20:56:14" itemprop="dateCreated datePublished" datetime="2021-10-23T20:24:09+08:00">2021-10-23</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-25 22:25:25" itemprop="dateModified" datetime="2019-06-25T22:25:25+08:00">2019-06-25</time>
               
             
           </span>
@@ -496,8 +483,8 @@ WIDGET = {FID: 'DmIm0qllkB'}
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/" itemprop="commentCount"></span>
+                <a href="/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -527,7 +514,7 @@ WIDGET = {FID: 'DmIm0qllkB'}
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">659</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -561,17 +548,61 @@ WIDGET = {FID: 'DmIm0qllkB'}
       
 
       
-        <p>这题的基本思想就是贪心吧</p>
-<p>题目就是让你两两分组，使得每组能力值的差值最小</p>
-<p>设$a_{1},a_{2},···,a_{n}$表示每个学生的能力值</p>
-<p>且满足：$a_{1} \le a_{2} \le ··· \le a_{n}$</p>
-<p>则对于任意一个能力值$a_{i}$，它的最优匹配为$a_{i+1}$（$i$为奇数）</p>
-<p>考虑到$a_{1}$，我们不取$a_{i-1}$（你想想$a_{1-1}$是什么）</p>
-<p>假设存在一个能力值$a_{k}$ ($k&gt; i+1$)，使得$a_{k}-a_{i}&lt; a_{i+1}-a_{i}$</p>
-<p>即: $a_{k}&lt;a_{i+1}$</p>
-<p>∵ $a_{i+1}&lt;a_{k}$</p>
-<p>∴ 不存在这样的$k$</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">110</span>],ans; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>);<span class="comment">//要先排序</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i+=<span class="number">2</span>) <span class="comment">//i要为奇数</span></span><br><span class="line">	&#123;    </span><br><span class="line">		ans+=a[i+<span class="number">1</span>]-a[i];<span class="comment">//答案加上两个能力值的差</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Day-7"><a href="#Day-7" class="headerlink" title="$Day-7$"></a>$Day-7$</h2><p>停课了，好耶！<del>可以颓七天了</del></p>
+<p>今天打$lmki$神仙出的模拟赛，被其他学校神仙暴虐/kk</p>
+<p>$100+40+40+0$我是什么fw</p>
+<p>$t1$博弈论，还是挺好看出结论的。</p>
+<p>$t2$有点懵，随便打了一个搜索和一个部分分。考完后才知道这是$lmki$自己出的题目，正解是$dp$+树状数组优化，还用了2种方法解释/se（lmki真是tql!!!)</p>
+<p>$t3$带修莫队，没学过/kk</p>
+<p>$t4$期望，。。。。</p>
+<h2 id="Day-6-Day-5"><a href="#Day-6-Day-5" class="headerlink" title="$Day-6$~$Day-5$"></a>$Day-6$~$Day-5$</h2><p>改题，学莫队</p>
+<h2 id="Day-4"><a href="#Day-4" class="headerlink" title="$Day-4$"></a>$Day-4$</h2><p>模拟赛。</p>
+<p>$100+20+100+0$ $rk2$</p>
+<h2 id="Day-3"><a href="#Day-3" class="headerlink" title="$Day-3$"></a>$Day-3$</h2><p>改题，刷题</p>
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="$Day-2$"></a>$Day-2$</h2><p>模拟赛</p>
+<p>$70+10+40+20$ $rk5$</p>
+<p>$t1$数组开小$100-&gt;70$</p>
+<p>$t2$忘记初始白色判断$100-&gt;10$</p>
+<p>$t3$重边忘了取min$60-&gt;40$</p>
+<p>三道题挂了$140$我是什么垃圾</p>
+<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="$Day-1$"></a>$Day-1$</h2><p>最后一天了，不想打题，跟机房神仙打了一上午雀魂</p>
+<p>下午继续颓废</p>
+<p>晚上$phigros$更新了！迅速推完第七章</p>
+<p>感觉明天要挂/kk</p>
+<p>考前$lmki$奶了一手四题思维题，但愿不是</p>
+<h2 id="Day-0"><a href="#Day-0" class="headerlink" title="$Day-0$"></a>$Day-0$</h2><p>早上睡到11点才醒，晚上颓太晚了/baojin</p>
+<p>整个人还有点困，下午真的要无了</p>
+<p>今年仍然在泉州一中考，虽然每年都来但是每一次都被震撼到（</p>
+<p>$14:29$ 草，好紧张</p>
+<p>$14:30$开题</p>
+<p>先看了一下编译选项，好耶，是$-O2$</p>
+<p>第一题，廊桥分配，第一眼感觉是贪心？</p>
+<p>第二题，括号序列，字符串？果断放弃</p>
+<p>第三题，回文，嗯。。</p>
+<p>第四题，交通规划，看不懂。。。</p>
+<p>开始回去打第一题，一直在$set$和手打平衡树之间纠结，最后还是选择了$set$</p>
+<p>先按照自己的思路写了一个，跑了第一个样例第二个样例都过了，第三个样例错了，顿时慌了。</p>
+<p>开始看代码，发现代码好像没错，难道是思路错了？</p>
+<p>又仔细想了一遍，构造出了几个可以hack的数据，修正了一下自己的思路，<del>好耶过了</del></p>
+<p>然后自己造了一个大数据，居然跑这么久？</p>
+<p>后面才发现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lower_bound(s.begin(), s.end(), val);</span><br></pre></td></tr></table></figure>
+<p>比</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.lower_bound(val);</span><br></pre></td></tr></table></figure>
+<p>慢得多，改成后者就跑的飞快了（我是sb</p>
+<p>第二题，想了一些性质，发现根本没用，看到爆搜才15分果断开下一题</p>
+<p>第三题打了一个40分的暴力，然后就不会了。</p>
+<p>再看一遍第四题，$k=2$部分分好像好做？码了一下最后还是放弃了。</p>
+<p>看了一下时间还有$1.5h$，就想把$t2$爆搜打一下，结果发现自己连暴力都不会了，草。</p>
+<p>无所事事ing….</p>
+<p>$t2$和$t4$反复横跳ing….</p>
+<p>最后二十分钟了，两题暴力都没打出来，我是什么fw</p>
+<p>又去检查了一遍$t1$和$t3$，不管了，等死了。</p>
+<p>出来跟神仙们讨论了一下，$t1$应该思路是正确的，那就放心了（</p>
+<p>回家。</p>
+<p>如果能进$NOIP$就再好不过了。</p>
+<p>又要回去肝文化课了（大哭</p>
+<p><img src="https://s3.bmp.ovh/imgs/2021/10/c9f1a3e982529234.jpg" alt=""></p>
 
       
     </div>
@@ -595,15 +626,9 @@ WIDGET = {FID: 'DmIm0qllkB'}
       
         <div class="post-tags">
           
-            <a href="/blog/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+            <a href="/blog/tags/%E6%B8%B8%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 游记</a>
           
-            <a href="/blog/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"><i class="fa fa-tag"></i> 洛谷</a>
-          
-            <a href="/blog/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
-          
-            <a href="/blog/tags/CodeForces/" rel="tag"><i class="fa fa-tag"></i> CodeForces</a>
-          
-            <a href="/blog/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="fa fa-tag"></i> 贪心</a>
+            <a href="/blog/tags/CSP/" rel="tag"><i class="fa fa-tag"></i> CSP</a>
           
         </div>
       
@@ -616,12 +641,12 @@ WIDGET = {FID: 'DmIm0qllkB'}
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/">题解 CF1092B 【Teams Forming】</a></p>
+  <p><span>本文标题:</span><a href="/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/">CSP-S2021游记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 WKAHPM 的个人博客">WKAHPM</a></p>
-  <p><span>发布时间:</span>2019年04月10日 - 22:08</p>
-  <p><span>最后更新:</span>2019年06月25日 - 22:25</p>
-  <p><span>原始链接:</span><a href="/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/" title="题解 CF1092B 【Teams Forming】">http://zyx02.github.io/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zyx02.github.io/blog/2019/04/10/%E9%A2%98%E8%A7%A3-CF1092B-%E3%80%90Teams-Forming%E3%80%91/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2021年10月23日 - 20:24</p>
+  <p><span>最后更新:</span>2021年10月23日 - 20:56</p>
+  <p><span>原始链接:</span><a href="/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/" title="CSP-S2021游记">http://zyx02.github.io/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zyx02.github.io/blog/2021/10/23/CSP-S2021%E6%B8%B8%E8%AE%B0/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -669,8 +694,8 @@ WIDGET = {FID: 'DmIm0qllkB'}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/04/08/%E9%A2%98%E8%A7%A3-CF1145F-%E3%80%90Neat-Words%E3%80%91/" rel="next" title="题解 CF1145F 【Neat Words】">
-                <i class="fa fa-chevron-left"></i> 题解 CF1145F 【Neat Words】
+              <a href="/blog/2021/08/28/%E9%A2%98%E8%A7%A3-ZJOI2012%E7%81%BE%E9%9A%BE/" rel="next" title="[题解]ZJOI2012灾难">
+                <i class="fa fa-chevron-left"></i> [题解]ZJOI2012灾难
               </a>
             
           </div>
@@ -678,10 +703,6 @@ WIDGET = {FID: 'DmIm0qllkB'}
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2019/04/11/%E9%A2%98%E8%A7%A3-CF1118A-%E3%80%90Water-Buying%E3%80%91/" rel="prev" title="题解 CF1118A 【Water Buying】">
-                题解 CF1118A 【Water Buying】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -938,7 +959,7 @@ WIDGET = {FID: 'DmIm0qllkB'}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">1.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-7"><span class="nav-number">1.</span> <span class="nav-text">$Day-7$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-6-Day-5"><span class="nav-number">2.</span> <span class="nav-text">$Day-6$~$Day-5$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-4"><span class="nav-number">3.</span> <span class="nav-text">$Day-4$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-3"><span class="nav-number">4.</span> <span class="nav-text">$Day-3$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2"><span class="nav-number">5.</span> <span class="nav-text">$Day-2$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">6.</span> <span class="nav-text">$Day-1$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-0"><span class="nav-number">7.</span> <span class="nav-text">$Day-0$</span></a></li></ol></div>
             
 
           </div>
